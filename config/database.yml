@@ -1,0 +1,20 @@
+development: &defaults
+  adapter: postgresql
+  encoding: unicode
+  database: fungal_development
+  pool: 5
+  username: harry
+  password: harry
+  host: localhost
+
+#test:
+#  <<: *defaults
+#  database: fungal_test
+
+staging:
+  <<: *defaults
+  database: fungal_core
+
+production:
+  <<: *defaults
+  database: fungal_production
