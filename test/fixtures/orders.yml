@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bill_amount: 1.5
+  user_id: 
+  service_id: 
+  status_id: 
+  weight: 1
+  collecting_date: 2016-11-16
+  delivery_date: 2016-11-16
+  collecting_time: 2016-11-16 20:54:19
+  delivery_time: 2016-11-16 20:54:19
+
+two:
+  bill_amount: 1.5
+  user_id: 
+  service_id: 
+  status_id: 
+  weight: 1
+  collecting_date: 2016-11-16
+  delivery_date: 2016-11-16
+  collecting_time: 2016-11-16 20:54:19
+  delivery_time: 2016-11-16 20:54:19
