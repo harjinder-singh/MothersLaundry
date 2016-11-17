@@ -1,10 +1,21 @@
-<%= form_for @order do |f| %>
-	Service Required <%= f.select :service_id, Service.all.map{|service| [ service.name, service.id]}%></br></br>
-	Pickup Date <%= f.select :collecting_date, ["17/11/2016","18/11/2016","19/11/2016"]%> </br></br>
-	Pickup Time <%= f.select :collecting_time, ["8-9", "9-10"]%> </br></br>
-	Delivery Date <%= f.select :delivery_date, ["18/11/2016","19/11/2016","20/11/2016"]%> </br></br>
-	Delivery Time <%= f.select :delivery_time, ["8-9", "9-10"]%> </br></br>
-	Locality <%= f.select :area, ["sec 15", "sec 16"]%> </br></br>
-	Address <%= f.text_area :address%> </br></br>
-	<%= f.submit "Submit Order", class:' btn blue pull-right' %>
-<%end%>
+<table border="1" cellpadding="10" cellspacing="10">
+	<tbody>
+		<%= form_for @order do |f| %>
+			<tr><td>Service Required</td>
+			<td><%= f.select :service_id, Service.all.map{|service| [ service.name, service.id]}%></td></tr>
+			<tr><td>Pickup Date </td>
+			<td><%= f.select :collecting_date, ["17/11/2016","18/11/2016","19/11/2016"]%></td>
+			<td>Pickup Time </td>
+			<td><%= f.select :collecting_time, ["8-9", "9-10"]%></td></tr>
+			<tr><td>Delivery Date </td>
+			<td><%= f.select :delivery_date, ["18/11/2016","19/11/2016","20/11/2016"]%> </td>
+			<td>Delivery Time </td>
+			<td><%= f.select :delivery_time, ["8-9", "9-10"]%></td></tr>
+			<tr><td>Locality </td>
+			<td><%= f.select :area, ["sec 15", "sec 16"]%></td></tr>
+			<tr><td>Address </td>
+			<td><%= f.text_area :address, maxlength: 150%></td></tr>
+			<tr><td colspan="2"><%= f.submit "Submit Order", class:' btn blue pull-right' %></td></tr>
+		<%end%>
+	</tbody>
+</table>

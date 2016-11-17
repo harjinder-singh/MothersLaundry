@@ -1,6 +1,6 @@
-Listing Orders
+<h2>Listing Orders</h2>
 <% if @orders.any?%>
-	<table border="2">
+	<table border="1" cellpadding="10" cellspacing="10">
 		<thead>
 			<tr>
 				<th>Order Id</th>
@@ -29,6 +29,7 @@ Listing Orders
 			<t>
 		</tbody>
 	</table>
+	</br>
 	<%= link_to 'New Order', new_order_path %>
   	<%= link_to 'Home', root_path %>
 <%else%>
