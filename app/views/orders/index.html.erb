@@ -1,0 +1,38 @@
+Listing Orders
+<% if @orders.any?%>
+	<table border="2">
+		<thead>
+			<tr>
+				<th>Order Id</th>
+				<th>Service Required</th>
+				<th>Address</th>
+				<th>Date/Time Of Pickup Required</th>
+				<th>Date/Time Of Delivery Required</th>
+				<th>Status</th>
+				<th>Total Weight</th>
+				<th>Bill Ammount</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @orders.each do |order| %>
+				<tr>
+				    <td><%= order.id %></td>
+					<td><%= order.service.name %></td>
+					<td><%= order.address %></td>
+					<td><%= "#{order.collecting_date}" + " / #{order.collecting_time}" %></td>
+					<td><%= "#{order.delivery_date}" + " / #{order.delivery_time}" %></td>
+					<td><%= order.status.name %></td>
+					<td><%= order.weight %></td>
+					<td><%= order.bill_amount %></td>
+				</tr>
+			<%end%>
+			<t>
+		</tbody>
+	</table>
+	<%= link_to 'New Order', new_order_path %>
+  	<%= link_to 'Home', root_path %>
+<%else%>
+You have not placed any order yet.  <br><br>
+
+Place your first order by clicking link <%= link_to 'First Order', new_order_path %>
+<%end%>

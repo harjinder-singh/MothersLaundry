@@ -5,3 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Service.delete_all
+Service.create([{name: 'Wash and Fold'},{name: 'Wash and Iron'},{name: 'Dry Clean'}])
+
+Address.delete_all
+Address.create([{full_address: 'Test 1'},{full_address: 'Test 2'},{full_address: 'Test 3'}])
+
+Status.delete_all
+Status.create([{name: "Ready to pickup"}, {name: "Picked"}, {name: "Ready for wash"}, {name: "Under Washing"}, {name: "Ready to dispach"}, {name: "Out for delivery"}, {name: "Delivered"}])
