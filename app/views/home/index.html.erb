@@ -114,12 +114,21 @@
 										</a>
 									</li>
 									<li>
-										<a href=<%= new_user_session_path %> class="br-lblue">
-											<!-- Link Icon -->
-											<i class="fa fa-sign-in link-icon"></i>
-											<!-- Link Title -->
-											<span class="link-title">Signin</span>
-										</a>
+										<% if user_signed_in?%>
+											<%= link_to logout_path, :method => :delete, class: "br-lblue" do%>
+												<!-- Link Icon -->
+												<i class="fa fa-sign-out link-icon"></i>
+												<span class="link-title">Sign Out</span>
+												<!-- Link Title -->
+											<%end%>
+										<%else%>
+											<a href=<%= login_path %> class="br-lblue">
+												<!-- Link Icon -->
+												<i class="fa fa-sign-in link-icon"></i>
+												<!-- Link Title -->
+												<span class="link-title">Signin</span>
+											</a>
+										<%end%>
 									</li>
 								</ul>
 							</div><!-- /.navbar-collapse -->
@@ -390,7 +399,7 @@
 						<div class="col-md-12">
 							<div class="page-mainbar service">
 								<!-- heading -->
-								<h3>Our Services</h3>
+								<h2>Our Services</h2>
 								<!-- service page item -->
 								<div class="other-service">
 									<div class="row">
@@ -441,8 +450,9 @@
 									</div>
 								</div>
 								<br/>
+								<br/>
 								<!-- Heading -->
-								<h3>Features</h3>
+								<h2>Why Choose Us</h2>
 								<!-- Service Page Content -->
 								<div class="service-content">
 									<div class="row">
@@ -511,7 +521,7 @@
 						<div class="col-md-12">
 							<div class="page-mainbar pricing">
 								<!-- Heading -->
-								<h3>Our Best Plans</h3>
+								<h2>Our Best Plans</h2>
 								<!-- Pricing Table -->
 								<div class="pricing-table">
 									<div class="row">
@@ -616,7 +626,7 @@
 									</div>
 								</div>
 								<!-- Heading -->
-								<h3>Dryclean Plans</h3>
+								<h2>Dryclean Plans</h2>
 								<!-- Other Plans Item -->
 								<div class="row">
 									<div class="col-md-4 col-sm-4">
@@ -704,7 +714,7 @@
 						<div class="col-md-12">
 							<div class="page-mainbar testimonial">
 								<!-- Heading -->
-								<h3>Clients Testimonial</h3>
+								<h2>Clients Testimonial</h2>
 								<!-- Testimonial Content -->
 								<div class="testimonial-content">
 									<div class="row">

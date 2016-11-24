@@ -1369,6 +1369,14 @@ a.btn-default i{
 	border-bottom: 1px solid #2a2a2a;
 }
 
+.inner-page .page-mainbar h2{
+	margin: 0px;
+	margin-bottom: 10px;
+	padding-bottom: 8px;
+	font-size: 25px;
+	border-bottom: 1px solid #2a2a2a;
+}
+
 .inner-page  .sidebar-link{
 	margin-top: 40px;
 }

@@ -32,10 +32,6 @@
 </head>
 
 <body>
-	<% if user_signed_in? %>
-		<%= current_user.email %>
-		<%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
-	<%end%>
 <div class="alert_html">
   <% if notice %>
     <div class="alert alert-info alert_top_spacing">
@@ -52,7 +48,7 @@
     </div>
   <%end %>
   <% if flash[:error] %>
-    <div class="alert flash_error alert_top_spacing">
+    <div class="alert alert-info alert_top_spacing">
       <a class="discard_contacts close" data-dismiss="alert" href='#'>&times;</a>
       <%= simple_format(flash[:error]) %>
     </div>
