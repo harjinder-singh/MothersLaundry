@@ -24,10 +24,10 @@
 							</a>
 						</li>
 						<li>
-							<a href="#contact" class="br-green" data-toggle="tab">
+							<a href="#quick_order" class="br-green" data-toggle="tab">
 								<!-- Icon -->
 								<i class="fa fa-user"></i>
-								<span>Contact</span>
+								<span>Quick Order</span>
 							</a>
 						</li>
 					</ul>
@@ -124,28 +124,73 @@
 						</div>
 						
 						<!-- Third Content for Nav bar -->
-						<div class="tab-pane fade br-green" id="contact">
+						<div class="tab-pane fade br-green" id="quick_order">
 							<!-- Heading -->
-							<h2>Contact Us</h2>
-							<form role="form">
+							<h2>Quick Order</h2>
+							<div class="form-group">
+							  	<label for="note">*Note: We recommend Login to get full control.  </label>
+							</div>
+							<%= form_tag quick_order_orders_path do |f| %>
 								<div class="form-group">
-									<!-- form input -->
-									<input type="text" class="form-control" id="name" placeholder="Name">
+									<div class="col-sm-12">
+										<label for="name">Name</label>
+										<%= text_field_tag :name, nil, class: "form-control",placeholder: "Full Name", autofocus: true %>
+									</div>
 								</div>
 								<div class="form-group">
-									<!-- form input -->
-									<input type="email" class="form-control" id="email" placeholder="Email">
+									<div class="col-sm-12">
+										<label for="Email">Email</label>
+										<%= text_field_tag :email,  nil, class: "form-control", placeholder: "Email", autocomplete: "off" %>
+									</div>
 								</div>
 								<div class="form-group">
-									<!-- form textarea -->
-									<textarea class="form-control" id="comment" rows="3" placeholder="Comments"></textarea>
+									<div class="col-sm-12">
+										<label for="phone_no">Phone No</label>
+										<%= text_field_tag :phone_no,  nil, class: "form-control", placeholder: "Phone Number", autocomplete: "off" %>
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="service_id">Service Required</label>
+									<%= select_tag :service_id, options_for_select(Service.all.map{|service| [ service.name, service.id]}), class:"form-control"%>
+								</div>
+								<div class="form-group">
+									<div class="col-sm-12">
+										<div class="col-sm-6">
+											<label for="service_id">Pickup Date</label>
+											<%= select_tag :collecting_date, options_for_select(["17/11/2016","18/11/2016","19/11/2016"]), class:"form-control"%>
+										</div>
+										<div class="col-sm-6">
+											<label for="service_id">Pickup Time</label>
+											<%= select_tag :collecting_time, options_for_select(["8-9", "9-10"]), class:"form-control"%>
+									  	</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="col-sm-12">
+										<div class="col-sm-6">
+										    <label for="service_id">Delivery Date</label>
+											<%= select_tag :delivery_date, options_for_select(["18/11/2016","19/11/2016","20/11/2016"]), class:"form-control"%>
+										</div>
+										<div class="col-sm-6">
+											<label for="service_id">Delivery Time</label>
+											<%= select_tag :delivery_time, options_for_select(["8-9", "9-10"]), class:"form-control"%>
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="service_id">Locality</label>
+									<%= select_tag :area,  options_for_select(["sec 15", "sec 16"]), class:"form-control"%>
+								</div>
+								<div class="form-group">
+									<label for="service_id">Address</label>
+									<%= text_area_tag :address, nil, maxlength: 150, class:"form-control"%>
 								</div>
 								<div class="form-group text-center">
 									<!-- form Submit and reset button -->
 									<button type="submit" class="btn btn-black">Submit</button>&nbsp;
 									<button type="reset" class="btn btn-default">Reset</button>
 								</div>
-							</form>
+							<%end%>
 						</div>
 					</div>
 				</div>
