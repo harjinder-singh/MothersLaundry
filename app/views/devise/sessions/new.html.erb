@@ -67,6 +67,12 @@
 									</div>
 								</div>
 							<%end%>
+							<br />
+							<div class="divider">
+							 OR
+							 </div>
+							<br />
+							<img src="img/google.png" class="img-responsive" alt="" height="33" width="175" href=<%=user_google_oauth2_omniauth_authorize_path%>/>
 							<!-- Sign in form End -->
 						</div>
 						
@@ -106,7 +112,7 @@
 									<div class="col-sm-12">
 										<div class="checkbox">
 											<label>
-												<%= f.check_box :terms_of_service %> Accept All Terms & Conditions
+												<%#= f.check_box :terms_of_service %> Accept All Terms & Conditions
 											</label>
 											<span class="pull-right"><a href="#">View</a></span>
 											<div class="clearfix"></div>

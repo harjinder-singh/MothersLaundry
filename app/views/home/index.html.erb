@@ -30,12 +30,21 @@
 							</form>
 						</div>
 					</div>
-					<div class="col-md-4 col-sm-4">
-						<!-- Contact Info -->
-						<div class="contact-info">
-							<span><i class="fa fa-phone br-lblue"></i> <strong>+91 234 - 234 - 3231</strong></span>
+					<% if user_signed_in?%>
+						<div class="col-md-4 col-sm-4">
+							<!-- Contact Info -->
+							<div class="contact-info">
+									<span><strong>Hi, <%= current_user.email%></strong></span>
+							</div>
 						</div>
-					</div>
+					<%else%>
+						<div class="col-md-4 col-sm-4">
+							<!-- Contact Info -->
+							<div class="contact-info">
+								<span><i class="fa fa-phone br-lblue"></i> <strong>+91 234 - 234 - 3231</strong></span>
+							</div>
+						</div>
+					<%end%>
 				</div>
 			</div>
 		</div>
