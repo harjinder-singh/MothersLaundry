@@ -15,6 +15,7 @@ Rails.application.routes.draw do
       post 'quick_order'
     end
   end
+  get 'pricing' => 'home#pricing'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

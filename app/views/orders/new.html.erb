@@ -1,21 +1,54 @@
-<table border="1" cellpadding="10" cellspacing="10">
-	<tbody>
-		<%= form_for @order do |f| %>
-			<tr><td>Service Required</td>
-			<td><%= f.select :service_id, Service.all.map{|service| [ service.name, service.id]}%></td></tr>
-			<tr><td>Pickup Date </td>
-			<td><%= f.select :collecting_date, ["17/11/2016","18/11/2016","19/11/2016"]%></td>
-			<td>Pickup Time </td>
-			<td><%= f.select :collecting_time, ["8-9", "9-10"]%></td></tr>
-			<tr><td>Delivery Date </td>
-			<td><%= f.select :delivery_date, ["18/11/2016","19/11/2016","20/11/2016"]%> </td>
-			<td>Delivery Time </td>
-			<td><%= f.select :delivery_time, ["8-9", "9-10"]%></td></tr>
-			<tr><td>Locality </td>
-			<td><%= f.select :area, ["sec 15", "sec 16"]%></td></tr>
-			<tr><td>Address </td>
-			<td><%= f.text_area :address, maxlength: 150%></td></tr>
-			<tr><td colspan="2"><%= f.submit "Submit Order", class:' btn blue pull-right' %></td></tr>
-		<%end%>
-	</tbody>
-</table>
+<div class="box-wrapper">
+	<div class="container">
+		<!-- Box First Row -->
+		<div class="inner-page">
+			<div class="container">
+				<div class="col-md-12">
+					<div class="page-mainbar">
+						<!-- Heading -->
+						<h2>Order Form</h2>
+						<div class="row">
+							<div class="col-md-3 col-sm-3">
+							</div>
+							<div class="col-md-6 col-sm-6">
+								<div class="br-green form-group">
+									<table class="table">
+										<tbody>
+											<%= form_for @order do |f| %>
+												<tr>
+													<td>Service Required</td>
+													<td><%= f.select :service_id, Service.all.map{|service| [ service.name, service.id]}, {}, class: "form-control"%></td>
+												</tr>
+												<tr>
+													<td>Pickup Date <%= f.select :collecting_date, ["17/11/2016","18/11/2016","19/11/2016"], {}, class: "form-control"%></td>
+													<td>Pickup Time <%= f.select :collecting_time, ["8-9", "9-10"], {}, class: "form-control"%></td>
+												</tr>
+												<tr>
+													<td>Delivery Date <%= f.select :delivery_date, ["18/11/2016","19/11/2016","20/11/2016"], {}, class: "form-control"%> </td>
+													<td>Delivery Time <%= f.select :delivery_time, ["8-9", "9-10"], {}, class: "form-control"%></td>
+												</tr>
+												<tr>
+													<td>Locality </td>
+													<td><%= f.select :area, ["sec 15", "sec 16"], {}, class: "form-control"%></td>
+												</tr>
+												<tr>
+													<td>Address </td>
+													<td><%= f.text_area :address, maxlength: 150, class: "form-control"%></td>
+												</tr>
+												<tr>
+													<td colspan="2"><%= f.submit "Submit Order", class:' btn pull-right btn-primary' %></td>
+												</tr>
+											<%end%>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<div class="col-md-3 col-sm-3">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

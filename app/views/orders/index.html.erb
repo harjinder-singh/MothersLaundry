@@ -1,39 +1,58 @@
-<h2>Listing Orders</h2>
-<% if @orders.any?%>
-	<table border="1" cellpadding="10" cellspacing="10">
-		<thead>
-			<tr>
-				<th>Order Id</th>
-				<th>Service Required</th>
-				<th>Address</th>
-				<th>Date/Time Of Pickup Required</th>
-				<th>Date/Time Of Delivery Required</th>
-				<th>Status</th>
-				<th>Total Weight</th>
-				<th>Bill Ammount</th>
-			</tr>
-		</thead>
-		<tbody>
-			<% @orders.each do |order| %>
-				<tr>
-				    <td><%= order.id %></td>
-					<td><%= order.service.name %></td>
-					<td><%= order.address %></td>
-					<td><%= "#{order.collecting_date}" + " / #{order.collecting_time}" %></td>
-					<td><%= "#{order.delivery_date}" + " / #{order.delivery_time}" %></td>
-					<td><%= order.status.name %></td>
-					<td><%= order.weight %></td>
-					<td><%= order.bill_amount %></td>
-				</tr>
-			<%end%>
-			<t>
-		</tbody>
-	</table>
-	</br>
-	<%= link_to 'New Order', new_order_path %>
-  	<%= link_to 'Home', root_path %>
-<%else%>
-You have not placed any order yet.  <br><br>
-
-Place your first order by clicking link <%= link_to 'First Order', new_order_path %>
-<%end%>
+<div class="box-wrapper">
+	<div class="container">
+		<!-- Box First Row -->
+		<div class="inner-page">
+			<div class="container">
+				<div class="col-md-12">
+					<div class="page-mainbar">
+						<!-- Heading -->
+						<h2>Order Listing</h2>
+						<div class="row">
+							<div class="col-md-12 col-sm-12">
+								<div class="br-pink form-group">
+									<% if @orders.any?%>
+										<table class="table table-bordered">
+											<thead>
+												<tr>
+													<th width="5%">Order Id</th>
+													<th width="15%">Service Required</th>
+													<th width="20%">Address</th>
+													<th width="15%">Date/Time Of Pickup Required</th>
+													<th width="15%">Date/Time Of Delivery Required</th>
+													<th width="10%">Status</th>
+													<th width="10%">Total Weight</th>
+													<th width="10%">Bill Amount</th>
+												</tr>
+											</thead>
+											<tbody>
+												<% @orders.each do |order| %>
+													<tr>
+													    <td><%= order.id %></td>
+														<td><%= order.service.name %></td>
+														<td><%= order.address %></td>
+														<td><%= "#{order.collecting_date}" + " / #{order.collecting_time}" %></td>
+														<td><%= "#{order.delivery_date}" + " / #{order.delivery_time}" %></td>
+														<td><%= order.status.name %></td>
+														<td><%= order.weight %></td>
+														<td><%= order.bill_amount %></td>
+													</tr>
+												<%end%>
+												<t>
+											</tbody>
+										</table>
+										</br>
+										<%= link_to 'New Order', new_order_path, class: "btn btn-primary btn-lg" %>
+									<%else%>
+										You have not placed any order yet.  <br><br>
+										
+										Place your first order by clicking link <%= link_to 'First Order', new_order_path %>
+									<%end%>
+								</div>
+							</div>
+ 						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>FunGallery</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= stylesheet_link_tag 'bootstrap.min'%>
   <%= stylesheet_link_tag 'animate.min'%>
   <%= stylesheet_link_tag 'prettyPhoto'%>
@@ -10,7 +10,7 @@
   <%= stylesheet_link_tag 'settings'%>
   <%= stylesheet_link_tag 'jquery.countdown'%>
   <%= stylesheet_link_tag 'style'%>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application'%>
   <%= javascript_include_tag 'jquery' %>
   <%= javascript_include_tag 'bootstrap.min' %>
   <%= javascript_include_tag 'jquery.themepunch.plugins.min' %>
@@ -63,7 +63,7 @@
 		<div class="header-info">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-4 col-sm-4">
+					<div class="col-md-3 col-sm-3">
 						<!-- Social Media -->
 						<div class="social">
 							<a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
@@ -74,16 +74,9 @@
 						</div>
 					</div>
 					<div class="col-md-4 col-sm-4">
-						<!-- Search Box -->
-						<div class="search">
-							<form>
-								<div class="input-group">
-									<input type="text" class="form-control" placeholder="Text to search">
-									<span class="input-group-btn">
-										<button class="btn" type="button"><i class="fa fa-search"></i></button>
-									</span>
-								</div>
-							</form>
+							<!-- Contact Info -->
+						<div class="contact-info">
+							<span><i class="fa fa-phone br-lblue"></i> <strong>+91 234 - 234 - 3231</strong></span>
 						</div>
 					</div>
 					<% if user_signed_in?%>
@@ -97,7 +90,7 @@
 						<div class="col-md-4 col-sm-4">
 							<!-- Contact Info -->
 							<div class="contact-info">
-								<span><i class="fa fa-phone br-lblue"></i> <strong>+91 234 - 234 - 3231</strong></span>
+									<span><strong>Hi, Guest</strong></span>
 							</div>
 						</div>
 					<%end%>
@@ -139,43 +132,45 @@
 										</a>
 									</li>
 									<li>
-										<a href="index.html" class="br-red">
+										<a href="/pricing" class="br-red">
 											<!-- Link Icon -->
 											<i class="fa fa-money link-icon"></i>
 											<!-- Link Title -->
 											<span class="link-title">Pricing</span>
 										</a>
 									</li>
+									<% if controller_name == "home" and action_name == "index"%>
+										<li>
+											<a href="index.html" class="br-purple">
+												<!-- Link Icon -->
+												<i class="fa fa-book link-icon"></i>
+												<!-- Link Title -->
+												<span class="link-title">Faq</span>
+											</a>
+										</li>
+										<li>
+											<a href="index.html" class="br-green">
+												<!-- Link Icon -->
+												<i class="fa fa-comment link-icon"></i>
+												<!-- Link Title -->
+												<span class="link-title">Contact</span>
+											</a>
+										</li>
+										<li>
+											<a href="index.html" class="br-pink">
+												<!-- Link Icon -->
+												<i class="fa fa-user link-icon"></i>
+												<!-- Link Title -->
+												<span class="link-title">About Us</span>
+											</a>
+										</li>
+									<%end%>
 									<li>
-										<a href="index.html" class="br-purple">
-											<!-- Link Icon -->
-											<i class="fa fa-book link-icon"></i>
-											<!-- Link Title -->
-											<span class="link-title">Faq</span>
-										</a>
-									</li>
-									<li>
-										<a href="index.html" class="br-green">
-											<!-- Link Icon -->
-											<i class="fa fa-comment link-icon"></i>
-											<!-- Link Title -->
-											<span class="link-title">Contact</span>
-										</a>
-									</li>
-									<li>
-										<a href="index.html" class="br-blue">
+										<a href=<%= new_order_path%> class="br-blue">
 											<!-- Link Icon -->
 											<i class="fa fa-plane link-icon"></i>
 											<!-- Link Title -->
 											<span class="link-title">Order Now</span>
-										</a>
-									</li>
-									<li>
-										<a href="index.html" class="br-pink">
-											<!-- Link Icon -->
-											<i class="fa fa-user link-icon"></i>
-											<!-- Link Title -->
-											<span class="link-title">About Us</span>
 										</a>
 									</li>
 									<li>
@@ -191,7 +186,7 @@
 												<!-- Link Icon -->
 												<i class="fa fa-sign-in link-icon"></i>
 												<!-- Link Title -->
-												<span class="link-title">Signin</span>
+												<span class="link-title">Sign In</span>
 											</a>
 										<%end%>
 									</li>
