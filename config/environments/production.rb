@@ -81,7 +81,7 @@ Rails.application.configure do
    :port                 => 587,
    :domain               => 'gmail.com',
    :user_name            => 'fungallery.development@gmail.com',
-   :password             => 'DUMMYUSER1234',
+   :password             => 'dummyuser1234',
    :authentication       => "plain",
   :enable_starttls_auto => true
   }
