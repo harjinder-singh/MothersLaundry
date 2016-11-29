@@ -1,892 +1,635 @@
-<!-- Body Wrapper -->
-<div class="wrapper white">
+<!-- Slider Start -->
 
-	<!-- Header Start -->
-	<div class="header">
-		<!-- Header Information -->
-		<div class="header-info">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-4 col-sm-4">
-						<!-- Social Media -->
-						<div class="social">
-							<a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-							<a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
-							<a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-							<a href="#" class="pinterest"><i class="fa fa-pinterest"></i></a>
-							<a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
-						</div>
+<div class="container">
+	<!--
+	#################################
+		- THEMEPUNCH BANNER -
+	#################################
+	-->
+	<div class="tp-banner-container">
+		<div class="tp-banner" >
+			<ul>
+				<!-- SLIDE  -->
+				<li data-transition="zoomout" data-slotamount="7" data-masterspeed="1000" >
+					<!-- MAIN IMAGE -->
+					<img src="img/slider/slide1.jpg"  alt="darkblurbg"  data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
+					<!-- LAYERS -->
+					<!-- LAYERS NR. 1 // -->
+					<div class="tp-caption lfl largegreenbg br-red"
+						data-x="50"
+						data-y="140"
+						data-speed="1500"
+						data-start="1200"
+						data-easing="Power4.easeOut"
+						data-endspeed="300"
+						data-endeasing="Linear.easeNone"
+						data-captionhidden="off">Red Perspective
+					</div>	
+					<!-- LAYERS NR. 2 -->
+					<div class="tp-caption skewfromleft medium_text paragraph"
+						data-x="50"
+						data-y="240"
+						data-speed="800"
+						data-start="1800"
+						data-easing="Power4.easeOut"
+						data-endspeed="400"
+						data-endeasing="Power4.easeOut"
+						data-captionhidden="off">At vero eos et accusamus et iusto<br />odio dignissimos ducimus qui blanditiis<br />praesentium voluptatum deleniti atque corrupti.
 					</div>
-					<div class="col-md-4 col-sm-4">
-						<!-- Search Box -->
-						<div class="search">
-							<form>
-								<div class="input-group">
-									<input type="text" class="form-control" placeholder="Text to search">
-									<span class="input-group-btn">
-										<button class="btn" type="button"><i class="fa fa-search"></i></button>
-									</span>
-								</div>
-							</form>
-						</div>
+					<!-- LAYERS NR. 3 // Slide Button -->
+					<div class="tp-caption sfb"
+						data-x="50"
+						data-y="350"
+						data-speed="1500"
+						data-start="2600"
+						data-easing="Power4.easeOut"
+						data-endspeed="300"
+						data-endeasing="Linear.easeNone"
+						data-captionhidden="off"><a href="#" class="btn btn-info btn-lg btn-circle">Know More <i class="fa fa-angle-right"></i></a>
 					</div>
-					<% if user_signed_in?%>
-						<div class="col-md-4 col-sm-4">
-							<!-- Contact Info -->
-							<div class="contact-info">
-									<span><strong>Hi, <%= current_user.email%></strong></span>
-							</div>
-						</div>
-					<%else%>
-						<div class="col-md-4 col-sm-4">
-							<!-- Contact Info -->
-							<div class="contact-info">
-								<span><i class="fa fa-phone br-lblue"></i> <strong>+91 234 - 234 - 3231</strong></span>
-							</div>
-						</div>
-					<%end%>
-				</div>
-			</div>
-		</div>
-		<!-- Header Navigation -->
-		<div class="header-navigation">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-4">
-						<!-- Logo -->
-						<div class="logo">
-							<!-- Heading -->
-							<h1><a href="index.html"><i class="fa fa-eye-slash br-red"></i> Laundary Service</a></h1>
-						</div>
+					<!-- LAYERS NR. 1 // Logo Image -->
+					<div class="tp-caption skewfromright"
+						data-x="600"
+						data-y="bottom"
+						data-speed="800"
+						data-start="3600"
+						data-easing="Power4.easeOut"
+						data-endspeed="400"
+						data-endeasing="Power4.easeOut"
+						data-captionhidden="off"><img src="img/slider/s21.png" class="img-responsive" alt="" />
 					</div>
-					<div class="col-md-8">
-						<!-- Bootstrap Navbar -->
-						<nav class="navbar navbar-default" role="navigation">
-							<!-- Brand and toggle get grouped for better mobile display -->
-							<div class="navbar-header">
-								<button type="button" class="navbar-toggle br-orange" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-									<span class="sr-only">Toggle navigation</span>
-									<span class="icon-bar"></span>
-									<span class="icon-bar"></span>
-									<span class="icon-bar"></span>
-								</button>
-							</div>
-							<!-- Collect the nav links, forms, and other content for toggling -->
-							<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-								<ul class="nav navbar-nav navbar-right">
-									<li>
-										<a href=<%= root_url%> class="br-orange">
-											<!-- Link Icon -->
-											<i class="fa fa-home link-icon"></i>
-											<!-- Link Title -->
-											<span class="link-title">Home</span>
-										</a>
-									</li>
-									<li>
-										<a href="index.html" class="br-red">
-											<!-- Link Icon -->
-											<i class="fa fa-money link-icon"></i>
-											<!-- Link Title -->
-											<span class="link-title">Pricing</span>
-										</a>
-									</li>
-									<li>
-										<a href="index.html" class="br-purple">
-											<!-- Link Icon -->
-											<i class="fa fa-book link-icon"></i>
-											<!-- Link Title -->
-											<span class="link-title">Faq</span>
-										</a>
-									</li>
-									<li>
-										<a href="index.html" class="br-green">
-											<!-- Link Icon -->
-											<i class="fa fa-comment link-icon"></i>
-											<!-- Link Title -->
-											<span class="link-title">Contact</span>
-										</a>
-									</li>
-									<li>
-										<a href="index.html" class="br-blue">
-											<!-- Link Icon -->
-											<i class="fa fa-plane link-icon"></i>
-											<!-- Link Title -->
-											<span class="link-title">Order Now</span>
-										</a>
-									</li>
-									<li>
-										<a href="index.html" class="br-pink">
-											<!-- Link Icon -->
-											<i class="fa fa-user link-icon"></i>
-											<!-- Link Title -->
-											<span class="link-title">About Us</span>
-										</a>
-									</li>
-									<li>
-										<% if user_signed_in?%>
-											<%= link_to logout_path, :method => :delete, class: "br-lblue" do%>
-												<!-- Link Icon -->
-												<i class="fa fa-sign-out link-icon"></i>
-												<span class="link-title">Sign Out</span>
-												<!-- Link Title -->
-											<%end%>
-										<%else%>
-											<a href=<%= login_path %> class="br-lblue">
-												<!-- Link Icon -->
-												<i class="fa fa-sign-in link-icon"></i>
-												<!-- Link Title -->
-												<span class="link-title">Signin</span>
-											</a>
-										<%end%>
-									</li>
-								</ul>
-							</div><!-- /.navbar-collapse -->
-						</nav>
+				</li>
+				<!-- SLIDE  -->
+				<li data-transition="zoomout" data-slotamount="7" data-masterspeed="1500" >
+					<!-- MAIN IMAGE -->
+					<img src="img/slider/slide2.jpg"  alt="slidebg1"  data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
+					<!-- LAYERS -->
+					<!-- LAYERS NR. 1 // Logo Image -->
+					<div class="tp-caption lfl"
+						data-x="130"
+						data-y="center"
+						data-speed="1500"
+						data-start="1200"
+						data-easing="Power4.easeOut"
+						data-endspeed="300"
+						data-endeasing="Linear.easeNone"
+						data-captionhidden="off"><img src="img/slider/logo.png" class="img-responsive" alt="" />
 					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- Header End -->
-	
-	<!-- Slider Start -->
-	
-	<div class="container">
-		<!--
-		#################################
-			- THEMEPUNCH BANNER -
-		#################################
-		-->
-		<div class="tp-banner-container">
-			<div class="tp-banner" >
-				<ul>
-					<!-- SLIDE  -->
-					<li data-transition="zoomout" data-slotamount="7" data-masterspeed="1000" >
-						<!-- MAIN IMAGE -->
-						<img src="img/slider/slide1.jpg"  alt="darkblurbg"  data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
-						<!-- LAYERS -->
-						<!-- LAYERS NR. 1 // -->
-						<div class="tp-caption lfl largegreenbg br-red"
-							data-x="50"
-							data-y="140"
-							data-speed="1500"
-							data-start="1200"
-							data-easing="Power4.easeOut"
-							data-endspeed="300"
-							data-endeasing="Linear.easeNone"
-							data-captionhidden="off">Red Perspective
-						</div>	
-						<!-- LAYERS NR. 2 -->
-						<div class="tp-caption skewfromleft medium_text paragraph"
-							data-x="50"
-							data-y="240"
-							data-speed="800"
-							data-start="1800"
-							data-easing="Power4.easeOut"
-							data-endspeed="400"
-							data-endeasing="Power4.easeOut"
-							data-captionhidden="off">At vero eos et accusamus et iusto<br />odio dignissimos ducimus qui blanditiis<br />praesentium voluptatum deleniti atque corrupti.
-						</div>
-						<!-- LAYERS NR. 3 // Slide Button -->
-						<div class="tp-caption sfb"
-							data-x="50"
-							data-y="350"
-							data-speed="1500"
-							data-start="2600"
-							data-easing="Power4.easeOut"
-							data-endspeed="300"
-							data-endeasing="Linear.easeNone"
-							data-captionhidden="off"><a href="#" class="btn btn-info btn-lg btn-circle">Know More <i class="fa fa-angle-right"></i></a>
-						</div>
-						<!-- LAYERS NR. 1 // Logo Image -->
-						<div class="tp-caption skewfromright"
-							data-x="600"
-							data-y="bottom"
-							data-speed="800"
-							data-start="3600"
-							data-easing="Power4.easeOut"
-							data-endspeed="400"
-							data-endeasing="Power4.easeOut"
-							data-captionhidden="off"><img src="img/slider/s21.png" class="img-responsive" alt="" />
-						</div>
-					</li>
-					<!-- SLIDE  -->
-					<li data-transition="zoomout" data-slotamount="7" data-masterspeed="1500" >
-						<!-- MAIN IMAGE -->
-						<img src="img/slider/slide2.jpg"  alt="slidebg1"  data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
-						<!-- LAYERS -->
-						<!-- LAYERS NR. 1 // Logo Image -->
-						<div class="tp-caption lfl"
-							data-x="130"
-							data-y="center"
-							data-speed="1500"
-							data-start="1200"
-							data-easing="Power4.easeOut"
-							data-endspeed="300"
-							data-endeasing="Linear.easeNone"
-							data-captionhidden="off"><img src="img/slider/logo.png" class="img-responsive" alt="" />
-						</div>
-						<!-- LAYERS NR. 2 -->
-						<div class="tp-caption lfr thinheadline_dark"
-							data-x="500"
-							data-y="120"
-							data-speed="1500"
-							data-start="2000"
-							data-easing="Power4.easeOut"
-							data-endspeed="300"
-							data-endeasing="Linear.easeNone"
-							data-captionhidden="off">Welcome To
-						</div>
-						<!-- LAYERS NR. 2.1 -->
-						<div class="tp-caption lfr very_large_text"
-							data-x="500"
-							data-y="150"
-							data-speed="1500"
-							data-start="2300"
-							data-easing="Power4.easeOut"
-							data-endspeed="300"
-							data-endeasing="Linear.easeNone"
-							data-captionhidden="off">FlatMania
-						</div>
-						<!-- LAYERS NR. 3 -->
-						<div class="tp-caption lfr medium_text paragraph"
-							data-x="500"
-							data-y="220"
-							data-speed="1500"
-							data-start="3000"
-							data-easing="Power4.easeOut"
-							data-endspeed="300"
-							data-endeasing="Linear.easeNone"
-							data-captionhidden="off">The Boxes Style Theme
-						</div>
-						<!-- LAYERS NR. 4 // Slide Button -->
-						<div class="tp-caption lfr medium_text paragraph"
-							data-x="500"
-							data-y="250"
-							data-speed="1500"
-							data-start="3400"
-							data-easing="Power4.easeOut"
-							data-endspeed="300"
-							data-endeasing="Linear.easeNone"
-							data-captionhidden="off">You can customize the CSS <br />of your webpage.
-						</div>
-						<!-- LAYERS NR. 4.1 // Slide Button -->
-						<div class="tp-caption sfb"
-							data-x="500"
-							data-y="325"
-							data-speed="1500"
-							data-start="4200"
-							data-easing="Power4.easeOut"
-							data-endspeed="300"
-							data-endeasing="Linear.easeNone"
-							data-captionhidden="off"><a href="#" class="btn btn-info btn-lg btn-circle">Download Now <i class="fa fa-angle-right"></i></a>
-						</div>
-					</li>
-					<!-- SLIDE  -->
-					<li data-transition="zoomout" data-slotamount="7" data-masterspeed="1500" >
-						<!-- MAIN IMAGE -->
-						<img src="img/slider/slide3.jpg"  alt="slidebg1"  data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
-						<!-- LAYERS NR. 1 -->
-						<div class="tp-caption lfl"
-							data-x="100"
-							data-y="130"
-							data-speed="800"
-							data-start="1500"
-							data-easing="Power4.easeOut"
-							data-endspeed="300"
-							data-endeasing="Linear.easeNone"
-							data-captionhidden="off"><img src="img/slider/s31.png" class="img-responsive" alt="" />
-						</div>
-						<!-- LAYERS NR. 2 -->
-						<div class="tp-caption lfl"
-							data-x="0"
-							data-y="252"
-							data-speed="800"
-							data-start="2100"
-							data-easing="Power4.easeOut"
-							data-endspeed="300"
-							data-endeasing="Linear.easeNone"
-							data-captionhidden="off"><img src="img/slider/s32.png" class="img-responsive" alt="" />
-						</div>
-						<!-- LAYERS NR. 3 -->
-						<div class="tp-caption lfl"
-							data-x="350"
-							data-y="290"
-							data-speed="800"
-							data-start="2700"
-							data-easing="Power4.easeOut"
-							data-endspeed="300"
-							data-endeasing="Linear.easeNone"
-							data-captionhidden="off"><img src="img/slider/s33.png" class="img-responsive" alt="" />
-						</div>
-						<!-- LAYERS NR. 4 -->
-						<div class="tp-caption lfl"
-							data-x="250"
-							data-y="309"
-							data-speed="800"
-							data-start="3300"
-							data-easing="Power4.easeOut"
-							data-endspeed="300"
-							data-endeasing="Linear.easeNone"
-							data-captionhidden="off"><img src="img/slider/s34.png" class="img-responsive" alt="" />
-						</div>
-						<!-- LAYERS NR. 5 // -->
-						<div class="tp-caption lfr largegreenbg br-orange"
-							data-x="right"
-							data-hoffset="-10"
-							data-y="140"
-							data-speed="1500"
-							data-start="4000"
-							data-easing="Power4.easeOut"
-							data-endspeed="300"
-							data-endeasing="Linear.easeNone"
-							data-captionhidden="off">Full Responsive
-						</div>	
-						<!-- LAYERS NR. 6 // -->
-						<div class="tp-caption lfr modern_big_redbg br-green"
-							data-x="right"
-							data-hoffset="-10"
-							data-y="220"
-							data-speed="1500"
-							data-start="4300"
-							data-easing="Power4.easeOut"
-							data-endspeed="300"
-							data-endeasing="Linear.easeNone"
-							data-captionhidden="off">Desktop
-						</div>	
-						<!-- LAYERS NR. 7 // -->
-						<div class="tp-caption lfr modern_big_redbg br-yellow"
-							data-x="right"
-							data-hoffset="-10"
-							data-y="270"
-							data-speed="1500"
-							data-start="4600"
-							data-easing="Power4.easeOut"
-							data-endspeed="300"
-							data-endeasing="Linear.easeNone"
-							data-captionhidden="off">Laptop & Tablet
-						</div>
-						<!-- LAYERS NR. 8 // -->
-						<div class="tp-caption lfr modern_big_redbg br-blue"
-							data-x="right"
-							data-hoffset="-10"
-							data-y="320"
-							data-speed="1500"
-							data-start="4900"
-							data-easing="Power4.easeOut"
-							data-endspeed="300"
-							data-endeasing="Linear.easeNone"
-							data-captionhidden="off">Smartphone & i-pad
-						</div>
-						<!-- LAYERS NR. 9 // -->
-						<div class="tp-caption lfr modern_big_redbg br-purple"
-							data-x="right"
-							data-hoffset="-10"
-							data-y="370"
-							data-speed="1500"
-							data-start="5200"
-							data-easing="Power4.easeOut"
-							data-endspeed="300"
-							data-endeasing="Linear.easeNone"
-							data-captionhidden="off">Mobile Phone
-						</div>
-					</li>
-				</ul>
-			</div>
+					<!-- LAYERS NR. 2 -->
+					<div class="tp-caption lfr thinheadline_dark"
+						data-x="500"
+						data-y="120"
+						data-speed="1500"
+						data-start="2000"
+						data-easing="Power4.easeOut"
+						data-endspeed="300"
+						data-endeasing="Linear.easeNone"
+						data-captionhidden="off">Welcome To
+					</div>
+					<!-- LAYERS NR. 2.1 -->
+					<div class="tp-caption lfr very_large_text"
+						data-x="500"
+						data-y="150"
+						data-speed="1500"
+						data-start="2300"
+						data-easing="Power4.easeOut"
+						data-endspeed="300"
+						data-endeasing="Linear.easeNone"
+						data-captionhidden="off">FlatMania
+					</div>
+					<!-- LAYERS NR. 3 -->
+					<div class="tp-caption lfr medium_text paragraph"
+						data-x="500"
+						data-y="220"
+						data-speed="1500"
+						data-start="3000"
+						data-easing="Power4.easeOut"
+						data-endspeed="300"
+						data-endeasing="Linear.easeNone"
+						data-captionhidden="off">The Boxes Style Theme
+					</div>
+					<!-- LAYERS NR. 4 // Slide Button -->
+					<div class="tp-caption lfr medium_text paragraph"
+						data-x="500"
+						data-y="250"
+						data-speed="1500"
+						data-start="3400"
+						data-easing="Power4.easeOut"
+						data-endspeed="300"
+						data-endeasing="Linear.easeNone"
+						data-captionhidden="off">You can customize the CSS <br />of your webpage.
+					</div>
+					<!-- LAYERS NR. 4.1 // Slide Button -->
+					<div class="tp-caption sfb"
+						data-x="500"
+						data-y="325"
+						data-speed="1500"
+						data-start="4200"
+						data-easing="Power4.easeOut"
+						data-endspeed="300"
+						data-endeasing="Linear.easeNone"
+						data-captionhidden="off"><a href="#" class="btn btn-info btn-lg btn-circle">Download Now <i class="fa fa-angle-right"></i></a>
+					</div>
+				</li>
+				<!-- SLIDE  -->
+				<li data-transition="zoomout" data-slotamount="7" data-masterspeed="1500" >
+					<!-- MAIN IMAGE -->
+					<img src="img/slider/slide3.jpg"  alt="slidebg1"  data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
+					<!-- LAYERS NR. 1 -->
+					<div class="tp-caption lfl"
+						data-x="100"
+						data-y="130"
+						data-speed="800"
+						data-start="1500"
+						data-easing="Power4.easeOut"
+						data-endspeed="300"
+						data-endeasing="Linear.easeNone"
+						data-captionhidden="off"><img src="img/slider/s31.png" class="img-responsive" alt="" />
+					</div>
+					<!-- LAYERS NR. 2 -->
+					<div class="tp-caption lfl"
+						data-x="0"
+						data-y="252"
+						data-speed="800"
+						data-start="2100"
+						data-easing="Power4.easeOut"
+						data-endspeed="300"
+						data-endeasing="Linear.easeNone"
+						data-captionhidden="off"><img src="img/slider/s32.png" class="img-responsive" alt="" />
+					</div>
+					<!-- LAYERS NR. 3 -->
+					<div class="tp-caption lfl"
+						data-x="350"
+						data-y="290"
+						data-speed="800"
+						data-start="2700"
+						data-easing="Power4.easeOut"
+						data-endspeed="300"
+						data-endeasing="Linear.easeNone"
+						data-captionhidden="off"><img src="img/slider/s33.png" class="img-responsive" alt="" />
+					</div>
+					<!-- LAYERS NR. 4 -->
+					<div class="tp-caption lfl"
+						data-x="250"
+						data-y="309"
+						data-speed="800"
+						data-start="3300"
+						data-easing="Power4.easeOut"
+						data-endspeed="300"
+						data-endeasing="Linear.easeNone"
+						data-captionhidden="off"><img src="img/slider/s34.png" class="img-responsive" alt="" />
+					</div>
+					<!-- LAYERS NR. 5 // -->
+					<div class="tp-caption lfr largegreenbg br-orange"
+						data-x="right"
+						data-hoffset="-10"
+						data-y="140"
+						data-speed="1500"
+						data-start="4000"
+						data-easing="Power4.easeOut"
+						data-endspeed="300"
+						data-endeasing="Linear.easeNone"
+						data-captionhidden="off">Full Responsive
+					</div>	
+					<!-- LAYERS NR. 6 // -->
+					<div class="tp-caption lfr modern_big_redbg br-green"
+						data-x="right"
+						data-hoffset="-10"
+						data-y="220"
+						data-speed="1500"
+						data-start="4300"
+						data-easing="Power4.easeOut"
+						data-endspeed="300"
+						data-endeasing="Linear.easeNone"
+						data-captionhidden="off">Desktop
+					</div>	
+					<!-- LAYERS NR. 7 // -->
+					<div class="tp-caption lfr modern_big_redbg br-yellow"
+						data-x="right"
+						data-hoffset="-10"
+						data-y="270"
+						data-speed="1500"
+						data-start="4600"
+						data-easing="Power4.easeOut"
+						data-endspeed="300"
+						data-endeasing="Linear.easeNone"
+						data-captionhidden="off">Laptop & Tablet
+					</div>
+					<!-- LAYERS NR. 8 // -->
+					<div class="tp-caption lfr modern_big_redbg br-blue"
+						data-x="right"
+						data-hoffset="-10"
+						data-y="320"
+						data-speed="1500"
+						data-start="4900"
+						data-easing="Power4.easeOut"
+						data-endspeed="300"
+						data-endeasing="Linear.easeNone"
+						data-captionhidden="off">Smartphone & i-pad
+					</div>
+					<!-- LAYERS NR. 9 // -->
+					<div class="tp-caption lfr modern_big_redbg br-purple"
+						data-x="right"
+						data-hoffset="-10"
+						data-y="370"
+						data-speed="1500"
+						data-start="5200"
+						data-easing="Power4.easeOut"
+						data-endspeed="300"
+						data-endeasing="Linear.easeNone"
+						data-captionhidden="off">Mobile Phone
+					</div>
+				</li>
+			</ul>
 		</div>
 	</div>
-	
-	<!-- Slider End -->
-	
-	<!-- Box Wrapper -->
-	<div class="box-wrapper">
-		<div class="container">
-			<!-- Box First Row -->
-			<div class="inner-page">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-12">
-							<div class="page-mainbar service">
-								<!-- heading -->
-								<h2>Our Services</h2>
-								<!-- service page item -->
-								<div class="other-service">
-									<div class="row">
-										<div class="col-md-3 col-sm-3">
-											<!-- service item -->
-											<div class="service-item br-orange animated">
-												<!-- icon -->
-												<i class="fa fa-pencil s-icon"></i>
-												<!-- heading -->
-												<h4>Wash And Fold/Iron</h4>
-												<!-- button -->
-												<a href="#" class="btn btn-default btn-circle">read more <i class="fa fa-angle-right"></i></a>
-											</div>
-										</div>
-										<div class="col-md-3 col-sm-3">
-											<!-- service item -->
-											<div class="service-item br-green animated">
-												<!-- icon -->
-												<i class="fa fa-shield s-icon"></i>
-												<!-- heading -->
-												<h4>Dry Cleaning</h4>
-												<!-- button -->
-												<a href="#" class="btn btn-default btn-circle">read more <i class="fa fa-angle-right"></i></a>
-											</div>
-										</div>
-										<div class="col-md-3 col-sm-3">
-											<!-- service item -->
-											<div class="service-item br-lblue animated">
-												<!-- icon -->
-												<i class="fa fa-clock-o s-icon"></i>
-												<!-- heading -->
-												<h4>Free Doorstep Delivery</h4>
-												<!-- button -->
-												<a href="#" class="btn btn-default btn-circle">read more <i class="fa fa-angle-right"></i></a>
-											</div>
-										</div>
-										<div class="col-md-3 col-sm-3">
-											<!-- service item -->
-											<div class="service-item br-pink animated">
-												<!-- icon -->
-												<i class="fa fa-signal s-icon"></i>
-												<!-- heading -->
-												<h4>Express Delivery</h4>
-												<!-- button -->
-												<a href="#" class="btn btn-default btn-circle">read more <i class="fa fa-angle-right"></i></a>
-											</div>
-										</div>
-									</div>
-								</div>
-								<br/>
-								<br/>
-								<!-- Heading -->
-								<h2>Why Choose Us</h2>
-								<!-- Service Page Content -->
-								<div class="service-content">
-									<div class="row">
-										<div class="col-md-6 col-sm-6">
-											<!-- Icon -->
-											<a href="#"><i class="fa fa-coffee br-red"></i></a>
-											<!-- Heading -->
-											<h4>48 Hour Delivery </h4>
-											<!-- Paragraph -->
-											<p>Praesidium voluptuary lenitive antique corrupts quotas do lores et quasi molests exception saint evocative cupidity non provident similitude sun in culpa quid officio desertion militia animi, id est laborum et dolorum fuga. </p>
-											<div class="clearfix"></div>
-										</div>
-										<div class="col-md-6 col-sm-6">
-											<!-- Icon -->
-											<a href="#"><i class="fa fa-cloud br-green"></i></a>
-											<!-- Heading -->
-											<h4>Doorstep Service</h4>
-											<!-- Paragraph -->
-											<p>Praesidium voluptuary lenitive antique corrupts quotas do lores et quasi molests exception saint evocative cupidity non provident similitude sun in culpa quid officio desertion militia animi, id est laborum et dolorum fuga. </p>
-											<div class="clearfix"></div>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-md-6 col-sm-6">
-											<!-- Icon -->
-											<a href="#"><i class="fa fa-filter br-purple"></i></a>
-											<!-- Heading -->
-											<h4>Quality Assurance</h4>
-											<!-- Paragraph -->
-											<p>Praesidium voluptuary lenitive antique corrupts quotas do lores et quasi molests exception saint evocative cupidity non provident similitude sun in culpa quid officio desertion militia animi, id est laborum et dolorum fuga. </p>
-											<div class="clearfix"></div>
-										</div>
-										<div class="col-md-6 col-sm-6">
-											<!-- Icon -->
-											<a href="#"><i class="fa fa-flask br-orange"></i></a>
-											<!-- Heading -->
-											<h4>Fabric Friendly Detergents</h4>
-											<!-- Paragraph -->
-											<p>Praesidium voluptuary lenitive antique corrupts quotas do lores et quasi molests exception saint evocative cupidity non provident similitude sun in culpa quid officio desertion militia animi, id est laborum et dolorum fuga. </p>
-											<div class="clearfix"></div>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-md-6 col-sm-6">
-											<!-- Icon -->
-											<a href="#"><i class="fa fa-compass br-yellow"></i></a>
-											<!-- Heading -->
-											<h4>Addon Services</h4>
-											<!-- Paragraph -->
-											<p>Praesidium voluptuary lenitive antique corrupts quotas do lores et quasi molests exception saint evocative cupidity non provident similitude sun in culpa quid officio desertion militia animi, id est laborum et dolorum fuga. </p>
-											<div class="clearfix"></div>
-										</div>
-										<div class="col-md-6 col-sm-6">
-											<!-- Icon -->
-											<a href="#"><i class="fa fa-glass br-lblue"></i></a>
-											<!-- Heading -->
-											<h4>Affordable Pricing</h4>
-											<!-- Paragraph -->
-											<p>Praesidium voluptuary lenitive antique corrupts quotas do lores et quasi molests exception saint evocative cupidity non provident similitude sun in culpa quid officio desertion militia animi, id est laborum et dolorum fuga. </p>
-											<div class="clearfix"></div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-12">
-							<div class="page-mainbar pricing">
-								<!-- Heading -->
-								<h2>Our Best Plans</h2>
-								<!-- Pricing Table -->
-								<div class="pricing-table">
-									<div class="row">
-										<div class="col-md-3 col-sm-3">
-											<!-- Pricing Item -->
-											<div class="pricing-item br-red">
-												<!-- Price -->
-												<span class="p-price">₹50<span>/kg</span></span>
-												<!-- Heading -->
-												<h4>Basic</h4>
-												<!-- Plan List -->
-												<ul class="list-unstyled">
-													<li>1Kg <i class="fa fa-check pull-right"></i>
-														<div class="clearfix"></div></li>
-													<li>Wash & Fold <i class="fa fa-check pull-right"></i>
-														<div class="clearfix"></div></li>
-													<li>Free Pickup <i class="fa fa-check pull-right"></i>
-														<div class="clearfix"></div></li>
-													<li>Free Delivery<i class="fa fa-check pull-right"></i>
-														<div class="clearfix"></div></li>
-													<li>Addon Service<i class="fa fa-times pull-right"></i>
-														<div class="clearfix"></div></li>
-												</ul>
-												<!-- Button -->
-												<a href="#" class="btn btn-default btn-circle">Buy Now <i class="fa fa-angle-right"></i></a>
-											</div>
-										</div>
-										<div class="col-md-3 col-sm-3">
-											<!-- Pricing Item -->
-											<div class="pricing-item br-green">
-												<!-- Price -->
-												<span class="p-price">₹70<span>/kg</span></span>
-												<!-- Heading -->
-												<h4>Standard</h4>
-												<!-- Plan List -->
-												<ul class="list-unstyled">
-													<li>1Kg <i class="fa fa-check pull-right"></i>
-														<div class="clearfix"></div></li>
-													<li>Wash & Iron <i class="fa fa-check pull-right"></i>
-														<div class="clearfix"></div></li>
-													<li>Free Pickup <i class="fa fa-check pull-right"></i>
-														<div class="clearfix"></div></li>
-													<li>Free Delivery<i class="fa fa-check pull-right"></i>
-														<div class="clearfix"></div></li>
-													<li>Addon Service<i class="fa fa-times pull-right"></i>
-														<div class="clearfix"></div></li>
-												</ul>
-												<!-- Button -->
-												<a href="#" class="btn btn-default btn-circle">Buy Now <i class="fa fa-angle-right"></i></a>
-												<!-- Price Tag -->
-												<span class="p-tag br-yellow">New</span>
-											</div>
-										</div>
-										<div class="col-md-3 col-sm-3">
-											<!-- Pricing Item -->
-											<div class="pricing-item br-lblue">
-												<!-- Price -->
-												<span class="p-price">₹200<span>/5kg</span></span>
-												<!-- Heading -->
-												<h4>Classic</h4>
-												<!-- Plan List -->
-												<ul class="list-unstyled">
-													<li>5Kg <i class="fa fa-check pull-right"></i>
-														<div class="clearfix"></div></li>
-													<li>Wash & Fold <i class="fa fa-check pull-right"></i>
-														<div class="clearfix"></div></li>
-													<li>Free Pickup <i class="fa fa-check pull-right"></i>
-														<div class="clearfix"></div></li>
-													<li>Free Delivery<i class="fa fa-check pull-right"></i>
-														<div class="clearfix"></div></li>
-													<li>Addon Service<i class="fa fa-check pull-right"></i>
-														<div class="clearfix"></div></li>
-												</ul>
-												<!-- Button -->
-												<a href="#" class="btn btn-default btn-circle">Buy Now <i class="fa fa-angle-right"></i></a>
-											</div>
-										</div>
-										<div class="col-md-3 col-sm-3">
-											<!-- Pricing Item -->
-											<div class="pricing-item br-pink">
-												<!-- Price -->
-												<span class="p-price">₹150<span>/kg</span></span>
-												<!-- Heading -->
-												<h4>Premium</h4>
-												<!-- Plan List -->
-												<ul class="list-unstyled">
-													<li>1Kg <i class="fa fa-check pull-right"></i>
-														<div class="clearfix"></div></li>
-													<li>Wash & Fold <i class="fa fa-check pull-right"></i>
-														<div class="clearfix"></div></li>
-													<li>Free Pickup <i class="fa fa-check pull-right"></i>
-														<div class="clearfix"></div></li>
-													<li>Free Delivery<i class="fa fa-check pull-right"></i>
-														<div class="clearfix"></div></li>
-													<li>Addon Service<i class="fa fa-check pull-right"></i>
-														<div class="clearfix"></div></li>
-												</ul>
-												<!-- Button -->
-												<a href="#" class="btn btn-default btn-circle">Buy Now <i class="fa fa-angle-right"></i></a>
-											</div>
-										</div>
-									</div>
-								</div>
-								<!-- Heading -->
-								<h2>Dryclean Plans</h2>
-								<!-- Other Plans Item -->
-								<div class="row">
-									<div class="col-md-4 col-sm-4">
-										<div class="p-plan-item br-pink animated">
-											<!-- Heading -->
-											<h4>Men <span class="plan-price pull-right">$29.0</span></h4>
-											<div class="clearfix"></div>
-											<!-- Plan List -->
-											<div class="row">
-												<div class="col-md-6 col-sm-6 col-xs-6">
-													<ul class="list-unstyled">
-														<li><i class="fa fa-check-square-o"></i> 500 bandwidth</li>
-														<li><i class="fa fa-check-square-o"></i> 5.5 GB</li>
-														<li><i class="fa fa-check-square-o"></i> 10 database</li>
-													</ul>
-												</div>
-												<div class="col-md-6 col-sm-6 col-xs-6">
-													<ul class="list-unstyled">
-														<li><i class="fa fa-check-square-o"></i> FTP account</li>
-														<li><i class="fa fa-check-square-o"></i> Single user</li>
-														<li><i class="fa fa-check-square-o"></i> 24/7 Support</li>
-													</ul>
-												</div>
-											</div>
-											<!-- Button -->
-											<a href="#" class="btn btn-black btn-circle">Get Now <i class="fa fa-angle-right"></i></a>
-										</div>
-									</div>
-									<div class="col-md-4 col-sm-4">
-										<div class="p-plan-item br-orange animated">
-											<!-- Heading -->
-											<h4>Women <span class="plan-price pull-right">$99.0</span></h4>
-											<div class="clearfix"></div>
-											<!-- Plan List -->
-											<div class="row">
-												<div class="col-md-6 col-sm-6 col-xs-6">
-													<ul class="list-unstyled">
-														<li><i class="fa fa-check-square-o"></i> 900 bandwidth</li>
-														<li><i class="fa fa-check-square-o"></i> 10 GB</li>
-														<li><i class="fa fa-check-square-o"></i> 15 database</li>
-													</ul>
-												</div>
-												<div class="col-md-6 col-sm-6 col-xs-6">
-													<ul class="list-unstyled">
-														<li><i class="fa fa-check-square-o"></i> FTP account</li>
-														<li><i class="fa fa-check-square-o"></i> Multi user</li>
-														<li><i class="fa fa-check-square-o"></i> 24/7 Support</li>
-													</ul>
-												</div>
-											</div>
-											<!-- Button -->
-											<a href="#" class="btn btn-black btn-circle">Get Now <i class="fa fa-angle-right"></i></a>
-										</div>
-									</div>
-									<div class="col-md-4 col-sm-4">
-										<div class="p-plan-item br-pink animated">
-											<!-- Heading -->
-											<h4>Kids <span class="plan-price pull-right">$29.0</span></h4>
-											<div class="clearfix"></div>
-											<!-- Plan List -->
-											<div class="row">
-												<div class="col-md-6 col-sm-6 col-xs-6">
-													<ul class="list-unstyled">
-														<li><i class="fa fa-check-square-o"></i> 500 bandwidth</li>
-														<li><i class="fa fa-check-square-o"></i> 5.5 GB</li>
-														<li><i class="fa fa-check-square-o"></i> 10 database</li>
-													</ul>
-												</div>
-												<div class="col-md-6 col-sm-6 col-xs-6">
-													<ul class="list-unstyled">
-														<li><i class="fa fa-check-square-o"></i> FTP account</li>
-														<li><i class="fa fa-check-square-o"></i> Single user</li>
-														<li><i class="fa fa-check-square-o"></i> 24/7 Support</li>
-													</ul>
-												</div>
-											</div>
-											<!-- Button -->
-											<a href="#" class="btn btn-black btn-circle">Get Now <i class="fa fa-angle-right"></i></a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<br/>
-						<div class="col-md-12">
-							<div class="page-mainbar testimonial">
-								<!-- Heading -->
-								<h2>Clients Testimonial</h2>
-								<!-- Testimonial Content -->
-								<div class="testimonial-content">
-									<div class="row">
-										<div class="col-md-6 col-sm-6">
-											<!-- Client post -->
-											<div class="testimonial-item br-red animated">
-												<!-- Image -->
-												<!-- Heading -->
-												<h4><img src="img/user.jpg" class="img-responsive" alt="" />Merry Watson</h4>
-												<blockquote>
-													<p>Vero eos et accusamus et iusto odio dignissimos duci is mus qui similique sunt in culpa blanditiis praesentium voluptatum deleniti.</p>
-												</blockquote>
-											</div>
-										</div>
-										<div class="col-md-6 col-sm-6">
-											<!-- Client post -->
-											<div class="testimonial-item br-lblue animated">
-												<!-- Image -->
-												<!-- Heading -->
-												<h4><img src="img/user2.jpg" class="img-responsive" alt="" />Jonny Parker</h4>
-												<blockquote>
-													<p>Vero eos et accusamus et iusto odio dignissimos duci is mus qui similique sunt in culpa blanditiis praesentium voluptatum deleniti.</p>
-												</blockquote>
-											</div>
-										</div>
-										<div class="col-md-6 col-sm-6">
-											<!-- Client post -->
-											<div class="testimonial-item br-purple animated">
-												<!-- Image -->
-												<!-- Heading -->
-												<h4><img src="img/user2.jpg" class="img-responsive" alt="" />Juliet Doe</h4>
-												<blockquote>
-													<p>Vero eos et accusamus et iusto odio dignissimos duci is mus qui similique sunt in culpa blanditiis praesentium voluptatum deleniti.</p>
-												</blockquote>
-											</div>
-										</div>
-										<div class="col-md-6 col-sm-6">
-											<!-- Client post -->
-											<div class="testimonial-item br-green animated">
-												<!-- Image -->
-												<!-- Heading -->
-												<h4><img src="img/user.jpg" class="img-responsive" alt="" />Michele Ford</h4>
-												<blockquote>
-													<p>Vero eos et accusamus et iusto odio dignissimos duci is mus qui similique sunt in culpa blanditiis praesentium voluptatum deleniti.</p>
-												</blockquote>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>			
-		</div>
-	</div>
-	
-	<!-- Footer Start -->
-	
-	<div class="footer">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-3 col-sm-6">
-					<!-- Footer Widget -->
-					<div class="footer-widget">
-						<!-- Logo Icon -->
-						<!-- Heading -->
-						<h2><a href="index.html"><i class="fa fa-eye-slash logo-icon br-red"></i> FlatMania</a></h2>
-						<!-- Paragraph -->
-						<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form believable.</p>
-						<!-- Social Media -->
-						<div class="social">
-							<a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-							<a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
-							<a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-							<a href="#" class="pinterest"><i class="fa fa-pinterest"></i></a>
-							<a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-6">
-					<!-- Footer Widget -->
-					<div class="footer-widget">
-						<!-- Heading -->
-						<h5><i class="fa fa-plus br-red"></i> Navigation Menu</h5>
-						<div class="row">
-							<div class="col-md-6 col-sm-6 col-xs-6">
-								<!-- Menu Icons link -->
-								<ul class="list-unstyled">
-									<li><a href="#"><i class="fa fa-home br-red"></i> Home</a></li>
-									<li><a href="#"><i class="fa fa-book br-yellow"></i> Careers</a></li>
-									<li><a href="#"><i class="fa fa-phone br-green"></i> Contact Us</a></li>
-									<li><a href="#"><i class="fa fa-gear br-lblue"></i> Service</a></li>
-									<li><a href="#"><i class="fa fa-comment br-purple"></i> Testimonial</a></li>
-								</ul>
-							</div>
-							<div class="col-md-6 col-sm-6 col-xs-6">
-								<!-- Menu Icons link -->
-								<ul class="list-unstyled">
-									<li><a href="#"><i class="fa fa-check br-green"></i> Features</a></li>
-									<li><a href="#"><i class="fa fa-search br-pink"></i> Coming Soon</a></li>
-									<li><a href="#"><i class="fa fa-user br-orange"></i> About Us</a></li>
-									<li><a href="#"><i class="fa fa-sign-in br-red"></i> Register</a></li>
-									<li><a href="#"><i class="fa fa-file br-blue"></i> Recent News</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="clearfix visible-sm"></div>
-				<div class="col-md-3 col-sm-6">
-					<!-- Footer Widget -->
-					<div class="footer-widget">
-						<!-- Heading -->
-						<h5><i class="fa fa-map-marker br-yellow"></i> Contact Us</h5>
-						<address>
-							<i class="fa fa-home br-green"></i> #98/3 Dark Politic Road, N B C <br />
-							&nbsp; &nbsp; &nbsp; &nbsp; Venue, 6th Main, USD Park,  <br />
-							&nbsp; &nbsp; &nbsp; &nbsp; Bangalore - 234543 <br />
-							<span><i class="fa fa-phone br-orange"></i> +91 123-456-2345</span>
-							<span><i class="fa fa-envelope-o br-blue"></i> <a href="#">abc@example.com</a></span>
-						</address>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-6">
-					<!-- Footer Widget -->
-					<div class="footer-widget">
-						<!-- Heading -->
-						<h5><i class="fa fa-location-arrow br-lblue"></i> Location</h5>
-						<!-- Google Map -->
-						<div class="map">
-							<!-- Image -->
-							<img src="img/map.png" class="img-responsive" alt="" />
-							<!-- Map Marker -->
-							<i class="fa fa-map-marker marker india lblue"></i>
-							<i class="fa fa-map-marker marker usa orange"></i>
-							<i class="fa fa-map-marker marker africa green"></i>
-						</div>
-						<span class="location-name">
-							<i class="fa fa-map-marker br-lblue"></i> India &nbsp;&nbsp;
-							<i class="fa fa-map-marker br-orange"></i> USA &nbsp;&nbsp;
-							<i class="fa fa-map-marker br-green"></i> Africa
-						</span>
-					</div>
-				</div>
-			</div>
-			<!-- Footer Copyright -->
-			<div class="footer-copyright">
-				<p>&copy; Copyright 2014 <a href="#">Company Name</a></p>
-			</div>
-		</div>
-	</div>
-	
-	<!-- Footer End -->
-	
 </div>
-<!-- Footer End -->
 
+<!-- Slider End -->
+
+<!-- Box Wrapper -->
+<div class="box-wrapper">
+	<div class="container">
+		<!-- Box First Row -->
+		<div class="inner-page">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="page-mainbar service">
+							<!-- heading -->
+							<h2>Our Services</h2>
+							<!-- service page item -->
+							<div class="other-service">
+								<div class="row">
+									<div class="col-md-3 col-sm-3">
+										<!-- service item -->
+										<div class="service-item br-orange animated">
+											<!-- icon -->
+											<i class="fa fa-pencil s-icon"></i>
+											<!-- heading -->
+											<h4>Wash And Fold/Iron</h4>
+											<!-- button -->
+											<a href="#" class="btn btn-default btn-circle">read more <i class="fa fa-angle-right"></i></a>
+										</div>
+									</div>
+									<div class="col-md-3 col-sm-3">
+										<!-- service item -->
+										<div class="service-item br-green animated">
+											<!-- icon -->
+											<i class="fa fa-shield s-icon"></i>
+											<!-- heading -->
+											<h4>Dry Cleaning</h4>
+											<!-- button -->
+											<a href="#" class="btn btn-default btn-circle">read more <i class="fa fa-angle-right"></i></a>
+										</div>
+									</div>
+									<div class="col-md-3 col-sm-3">
+										<!-- service item -->
+										<div class="service-item br-lblue animated">
+											<!-- icon -->
+											<i class="fa fa-clock-o s-icon"></i>
+											<!-- heading -->
+											<h4>Free Doorstep Delivery</h4>
+											<!-- button -->
+											<a href="#" class="btn btn-default btn-circle">read more <i class="fa fa-angle-right"></i></a>
+										</div>
+									</div>
+									<div class="col-md-3 col-sm-3">
+										<!-- service item -->
+										<div class="service-item br-pink animated">
+											<!-- icon -->
+											<i class="fa fa-signal s-icon"></i>
+											<!-- heading -->
+											<h4>Express Delivery</h4>
+											<!-- button -->
+											<a href="#" class="btn btn-default btn-circle">read more <i class="fa fa-angle-right"></i></a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<br/>
+							<br/>
+							<!-- Heading -->
+							<h2>Why Choose Us</h2>
+							<!-- Service Page Content -->
+							<div class="service-content">
+								<div class="row">
+									<div class="col-md-6 col-sm-6">
+										<!-- Icon -->
+										<a href="#"><i class="fa fa-coffee br-red"></i></a>
+										<!-- Heading -->
+										<h4>48 Hour Delivery </h4>
+										<!-- Paragraph -->
+										<p>Praesidium voluptuary lenitive antique corrupts quotas do lores et quasi molests exception saint evocative cupidity non provident similitude sun in culpa quid officio desertion militia animi, id est laborum et dolorum fuga. </p>
+										<div class="clearfix"></div>
+									</div>
+									<div class="col-md-6 col-sm-6">
+										<!-- Icon -->
+										<a href="#"><i class="fa fa-cloud br-green"></i></a>
+										<!-- Heading -->
+										<h4>Doorstep Service</h4>
+										<!-- Paragraph -->
+										<p>Praesidium voluptuary lenitive antique corrupts quotas do lores et quasi molests exception saint evocative cupidity non provident similitude sun in culpa quid officio desertion militia animi, id est laborum et dolorum fuga. </p>
+										<div class="clearfix"></div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-6 col-sm-6">
+										<!-- Icon -->
+										<a href="#"><i class="fa fa-filter br-purple"></i></a>
+										<!-- Heading -->
+										<h4>Quality Assurance</h4>
+										<!-- Paragraph -->
+										<p>Praesidium voluptuary lenitive antique corrupts quotas do lores et quasi molests exception saint evocative cupidity non provident similitude sun in culpa quid officio desertion militia animi, id est laborum et dolorum fuga. </p>
+										<div class="clearfix"></div>
+									</div>
+									<div class="col-md-6 col-sm-6">
+										<!-- Icon -->
+										<a href="#"><i class="fa fa-flask br-orange"></i></a>
+										<!-- Heading -->
+										<h4>Fabric Friendly Detergents</h4>
+										<!-- Paragraph -->
+										<p>Praesidium voluptuary lenitive antique corrupts quotas do lores et quasi molests exception saint evocative cupidity non provident similitude sun in culpa quid officio desertion militia animi, id est laborum et dolorum fuga. </p>
+										<div class="clearfix"></div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-6 col-sm-6">
+										<!-- Icon -->
+										<a href="#"><i class="fa fa-compass br-yellow"></i></a>
+										<!-- Heading -->
+										<h4>Addon Services</h4>
+										<!-- Paragraph -->
+										<p>Praesidium voluptuary lenitive antique corrupts quotas do lores et quasi molests exception saint evocative cupidity non provident similitude sun in culpa quid officio desertion militia animi, id est laborum et dolorum fuga. </p>
+										<div class="clearfix"></div>
+									</div>
+									<div class="col-md-6 col-sm-6">
+										<!-- Icon -->
+										<a href="#"><i class="fa fa-glass br-lblue"></i></a>
+										<!-- Heading -->
+										<h4>Affordable Pricing</h4>
+										<!-- Paragraph -->
+										<p>Praesidium voluptuary lenitive antique corrupts quotas do lores et quasi molests exception saint evocative cupidity non provident similitude sun in culpa quid officio desertion militia animi, id est laborum et dolorum fuga. </p>
+										<div class="clearfix"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12">
+						<div class="page-mainbar pricing">
+							<!-- Heading -->
+							<h2>Our Best Plans</h2>
+							<!-- Pricing Table -->
+							<div class="pricing-table">
+								<div class="row">
+									<div class="col-md-3 col-sm-3">
+										<!-- Pricing Item -->
+										<div class="pricing-item br-red">
+											<!-- Price -->
+											<span class="p-price">₹50<span>/kg</span></span>
+											<!-- Heading -->
+											<h4>Basic</h4>
+											<!-- Plan List -->
+											<ul class="list-unstyled">
+												<li>1Kg <i class="fa fa-check pull-right"></i>
+													<div class="clearfix"></div></li>
+												<li>Wash & Fold <i class="fa fa-check pull-right"></i>
+													<div class="clearfix"></div></li>
+												<li>Free Pickup <i class="fa fa-check pull-right"></i>
+													<div class="clearfix"></div></li>
+												<li>Free Delivery<i class="fa fa-check pull-right"></i>
+													<div class="clearfix"></div></li>
+												<li>Addon Service<i class="fa fa-times pull-right"></i>
+													<div class="clearfix"></div></li>
+											</ul>
+											<!-- Button -->
+											<a href="#" class="btn btn-default btn-circle">Buy Now <i class="fa fa-angle-right"></i></a>
+										</div>
+									</div>
+									<div class="col-md-3 col-sm-3">
+										<!-- Pricing Item -->
+										<div class="pricing-item br-green">
+											<!-- Price -->
+											<span class="p-price">₹70<span>/kg</span></span>
+											<!-- Heading -->
+											<h4>Standard</h4>
+											<!-- Plan List -->
+											<ul class="list-unstyled">
+												<li>1Kg <i class="fa fa-check pull-right"></i>
+													<div class="clearfix"></div></li>
+												<li>Wash & Iron <i class="fa fa-check pull-right"></i>
+													<div class="clearfix"></div></li>
+												<li>Free Pickup <i class="fa fa-check pull-right"></i>
+													<div class="clearfix"></div></li>
+												<li>Free Delivery<i class="fa fa-check pull-right"></i>
+													<div class="clearfix"></div></li>
+												<li>Addon Service<i class="fa fa-times pull-right"></i>
+													<div class="clearfix"></div></li>
+											</ul>
+											<!-- Button -->
+											<a href="#" class="btn btn-default btn-circle">Buy Now <i class="fa fa-angle-right"></i></a>
+											<!-- Price Tag -->
+											<span class="p-tag br-yellow">New</span>
+										</div>
+									</div>
+									<div class="col-md-3 col-sm-3">
+										<!-- Pricing Item -->
+										<div class="pricing-item br-lblue">
+											<!-- Price -->
+											<span class="p-price">₹200<span>/5kg</span></span>
+											<!-- Heading -->
+											<h4>Classic</h4>
+											<!-- Plan List -->
+											<ul class="list-unstyled">
+												<li>5Kg <i class="fa fa-check pull-right"></i>
+													<div class="clearfix"></div></li>
+												<li>Wash & Fold <i class="fa fa-check pull-right"></i>
+													<div class="clearfix"></div></li>
+												<li>Free Pickup <i class="fa fa-check pull-right"></i>
+													<div class="clearfix"></div></li>
+												<li>Free Delivery<i class="fa fa-check pull-right"></i>
+													<div class="clearfix"></div></li>
+												<li>Addon Service<i class="fa fa-check pull-right"></i>
+													<div class="clearfix"></div></li>
+											</ul>
+											<!-- Button -->
+											<a href="#" class="btn btn-default btn-circle">Buy Now <i class="fa fa-angle-right"></i></a>
+										</div>
+									</div>
+									<div class="col-md-3 col-sm-3">
+										<!-- Pricing Item -->
+										<div class="pricing-item br-pink">
+											<!-- Price -->
+											<span class="p-price">₹150<span>/kg</span></span>
+											<!-- Heading -->
+											<h4>Premium</h4>
+											<!-- Plan List -->
+											<ul class="list-unstyled">
+												<li>1Kg <i class="fa fa-check pull-right"></i>
+													<div class="clearfix"></div></li>
+												<li>Wash & Fold <i class="fa fa-check pull-right"></i>
+													<div class="clearfix"></div></li>
+												<li>Free Pickup <i class="fa fa-check pull-right"></i>
+													<div class="clearfix"></div></li>
+												<li>Free Delivery<i class="fa fa-check pull-right"></i>
+													<div class="clearfix"></div></li>
+												<li>Addon Service<i class="fa fa-check pull-right"></i>
+													<div class="clearfix"></div></li>
+											</ul>
+											<!-- Button -->
+											<a href="#" class="btn btn-default btn-circle">Buy Now <i class="fa fa-angle-right"></i></a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- Heading -->
+							<h2>Dryclean Plans</h2>
+							<!-- Other Plans Item -->
+							<div class="row">
+								<div class="col-md-4 col-sm-4">
+									<div class="p-plan-item br-pink animated">
+										<!-- Heading -->
+										<h4>Men <span class="plan-price pull-right">$29.0</span></h4>
+										<div class="clearfix"></div>
+										<!-- Plan List -->
+										<div class="row">
+											<div class="col-md-6 col-sm-6 col-xs-6">
+												<ul class="list-unstyled">
+													<li><i class="fa fa-check-square-o"></i> 500 bandwidth</li>
+													<li><i class="fa fa-check-square-o"></i> 5.5 GB</li>
+													<li><i class="fa fa-check-square-o"></i> 10 database</li>
+												</ul>
+											</div>
+											<div class="col-md-6 col-sm-6 col-xs-6">
+												<ul class="list-unstyled">
+													<li><i class="fa fa-check-square-o"></i> FTP account</li>
+													<li><i class="fa fa-check-square-o"></i> Single user</li>
+													<li><i class="fa fa-check-square-o"></i> 24/7 Support</li>
+												</ul>
+											</div>
+										</div>
+										<!-- Button -->
+										<a href="#" class="btn btn-black btn-circle">Get Now <i class="fa fa-angle-right"></i></a>
+									</div>
+								</div>
+								<div class="col-md-4 col-sm-4">
+									<div class="p-plan-item br-orange animated">
+										<!-- Heading -->
+										<h4>Women <span class="plan-price pull-right">$99.0</span></h4>
+										<div class="clearfix"></div>
+										<!-- Plan List -->
+										<div class="row">
+											<div class="col-md-6 col-sm-6 col-xs-6">
+												<ul class="list-unstyled">
+													<li><i class="fa fa-check-square-o"></i> 900 bandwidth</li>
+													<li><i class="fa fa-check-square-o"></i> 10 GB</li>
+													<li><i class="fa fa-check-square-o"></i> 15 database</li>
+												</ul>
+											</div>
+											<div class="col-md-6 col-sm-6 col-xs-6">
+												<ul class="list-unstyled">
+													<li><i class="fa fa-check-square-o"></i> FTP account</li>
+													<li><i class="fa fa-check-square-o"></i> Multi user</li>
+													<li><i class="fa fa-check-square-o"></i> 24/7 Support</li>
+												</ul>
+											</div>
+										</div>
+										<!-- Button -->
+										<a href="#" class="btn btn-black btn-circle">Get Now <i class="fa fa-angle-right"></i></a>
+									</div>
+								</div>
+								<div class="col-md-4 col-sm-4">
+									<div class="p-plan-item br-pink animated">
+										<!-- Heading -->
+										<h4>Kids <span class="plan-price pull-right">$29.0</span></h4>
+										<div class="clearfix"></div>
+										<!-- Plan List -->
+										<div class="row">
+											<div class="col-md-6 col-sm-6 col-xs-6">
+												<ul class="list-unstyled">
+													<li><i class="fa fa-check-square-o"></i> 500 bandwidth</li>
+													<li><i class="fa fa-check-square-o"></i> 5.5 GB</li>
+													<li><i class="fa fa-check-square-o"></i> 10 database</li>
+												</ul>
+											</div>
+											<div class="col-md-6 col-sm-6 col-xs-6">
+												<ul class="list-unstyled">
+													<li><i class="fa fa-check-square-o"></i> FTP account</li>
+													<li><i class="fa fa-check-square-o"></i> Single user</li>
+													<li><i class="fa fa-check-square-o"></i> 24/7 Support</li>
+												</ul>
+											</div>
+										</div>
+										<!-- Button -->
+										<a href="#" class="btn btn-black btn-circle">Get Now <i class="fa fa-angle-right"></i></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<br/>
+					<div class="col-md-12">
+						<div class="page-mainbar testimonial">
+							<!-- Heading -->
+							<h2>Clients Testimonial</h2>
+							<!-- Testimonial Content -->
+							<div class="testimonial-content">
+								<div class="row">
+									<div class="col-md-6 col-sm-6">
+										<!-- Client post -->
+										<div class="testimonial-item br-red animated">
+											<!-- Image -->
+											<!-- Heading -->
+											<h4><img src="img/user.jpg" class="img-responsive" alt="" />Merry Watson</h4>
+											<blockquote>
+												<p>Vero eos et accusamus et iusto odio dignissimos duci is mus qui similique sunt in culpa blanditiis praesentium voluptatum deleniti.</p>
+											</blockquote>
+										</div>
+									</div>
+									<div class="col-md-6 col-sm-6">
+										<!-- Client post -->
+										<div class="testimonial-item br-lblue animated">
+											<!-- Image -->
+											<!-- Heading -->
+											<h4><img src="img/user2.jpg" class="img-responsive" alt="" />Jonny Parker</h4>
+											<blockquote>
+												<p>Vero eos et accusamus et iusto odio dignissimos duci is mus qui similique sunt in culpa blanditiis praesentium voluptatum deleniti.</p>
+											</blockquote>
+										</div>
+									</div>
+									<div class="col-md-6 col-sm-6">
+										<!-- Client post -->
+										<div class="testimonial-item br-purple animated">
+											<!-- Image -->
+											<!-- Heading -->
+											<h4><img src="img/user2.jpg" class="img-responsive" alt="" />Juliet Doe</h4>
+											<blockquote>
+												<p>Vero eos et accusamus et iusto odio dignissimos duci is mus qui similique sunt in culpa blanditiis praesentium voluptatum deleniti.</p>
+											</blockquote>
+										</div>
+									</div>
+									<div class="col-md-6 col-sm-6">
+										<!-- Client post -->
+										<div class="testimonial-item br-green animated">
+											<!-- Image -->
+											<!-- Heading -->
+											<h4><img src="img/user.jpg" class="img-responsive" alt="" />Michele Ford</h4>
+											<blockquote>
+												<p>Vero eos et accusamus et iusto odio dignissimos duci is mus qui similique sunt in culpa blanditiis praesentium voluptatum deleniti.</p>
+											</blockquote>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>			
+	</div>
+</div>
+
+	
 <!-- Scroll to top -->
 <span class="totop"><a href="#"><i class="fa fa-angle-up"></i></a></span>
-<% if user_signed_in? %>
-<%= link_to 'New Order', new_order_path %>
-<%= link_to 'List Orders', orders_path %>
-<%else%>
-  <h1>Please sign in</h1>
-<% end%>

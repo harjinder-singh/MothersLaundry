@@ -1,228 +1,212 @@
 <% page = page || ""%>
 <%= hidden_field_tag 'page', page%>
-<div class="wrapper white">
-	<!-- Inner Page Content // Start -->
-	<div class="inner-page">
-		<div class="container">
-			<div class="page-mainbar login">
-				<!-- Login/Register Content -->
-				<div class="login-content">
-					<!-- Nab Bar Tan Menu list -->
-					<ul id="mytab" class="nav nav-tabs nav-justify">
-						<li class="active">
-							<a href="#login" class="br-red" data-toggle="tab">
-								<!-- Icon -->
-								<i class="fa fa-sign-in"></i>
-								<span>Login</span>
-							</a>
-						</li>
-						<li>
-							<a href="#register" class="br-lblue" data-toggle="tab">
-								<!-- Icon -->
-								<i class="fa fa-sign-out"></i>
-								<span>Sign Up</span>
-							</a>
-						</li>
-						<li>
-							<a href="#quick_order" class="br-green" data-toggle="tab">
-								<!-- Icon -->
-								<i class="fa fa-user"></i>
-								<span>Quick Order</span>
-							</a>
-						</li>
-					</ul>
-					<!-- Content for each menu item -->
-					<div class="tab-content">
-						<!-- First Content for Nav bar -->
-						<div class="tab-pane fade in active br-red" id="login">
-							<!-- Heading -->
-							<h2>Login</h2>
-							<!-- Sign in Form Start -->
-							<%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "form-horizontal"} ) do |f| %>
-								<div class="form-group">
-									<div class="col-sm-12">
-										<%= f.email_field :email,  class: "form-control", autofocus: true, placeholder: "Email" %>
+<div class="inner-page">
+	<div class="container">
+		<div class="page-mainbar login">
+			<!-- Login/Register Content -->
+			<div class="login-content">
+				<!-- Nab Bar Tan Menu list -->
+				<ul id="mytab" class="nav nav-tabs nav-justify">
+					<li class="active">
+						<a href="#login" class="br-red" data-toggle="tab">
+							<!-- Icon -->
+							<i class="fa fa-sign-in"></i>
+							<span>Login</span>
+						</a>
+					</li>
+					<li>
+						<a href="#register" class="br-lblue" data-toggle="tab">
+							<!-- Icon -->
+							<i class="fa fa-sign-out"></i>
+							<span>Sign Up</span>
+						</a>
+					</li>
+					<li>
+						<a href="#quick_order" class="br-green" data-toggle="tab">
+							<!-- Icon -->
+							<i class="fa fa-user"></i>
+							<span>Quick Order</span>
+						</a>
+					</li>
+				</ul>
+				<!-- Content for each menu item -->
+				<div class="tab-content">
+					<!-- First Content for Nav bar -->
+					<div class="tab-pane fade in active br-red" id="login">
+						<!-- Heading -->
+						<h2>Login</h2>
+						<!-- Sign in Form Start -->
+						<%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "form-horizontal"} ) do |f| %>
+							<div class="form-group">
+								<div class="col-sm-12">
+									<%= f.email_field :email,  class: "form-control", autofocus: true, placeholder: "Email" %>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-12">
+									<%= f.password_field :password, class: "form-control", placeholder: "Password", autocomplete: "off" %>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-12">
+									<div class="checkbox">
+										<label>
+											<input type="checkbox"> Remember me
+										</label>
+										<span class="pull-right"><a href="#">Forget Password</a></span>
+										<div class="clearfix"></div>
 									</div>
 								</div>
-								<div class="form-group">
-									<div class="col-sm-12">
-										<%= f.password_field :password, class: "form-control", placeholder: "Password", autocomplete: "off" %>
-									</div>
+							</div>
+							<div class="form-group text-center">
+								<div class="col-sm-12">
+									<button type="submit" class="btn btn-black">Login</button>&nbsp;
+									<button type="reset" class="btn btn-default">Reset</button>
 								</div>
-								<div class="form-group">
-									<div class="col-sm-12">
-										<div class="checkbox">
-											<label>
-												<input type="checkbox"> Remember me
-											</label>
-											<span class="pull-right"><a href="#">Forget Password</a></span>
-											<div class="clearfix"></div>
-										</div>
-									</div>
-								</div>
-								<div class="form-group text-center">
-									<div class="col-sm-12">
-										<button type="submit" class="btn btn-black">Login</button>&nbsp;
-										<button type="reset" class="btn btn-default">Reset</button>
-									</div>
-								</div>
-							<%end%>
-							<br />
-							<div class="divider">
-							 OR
-							 </div>
-							<br />
+							</div>
+						<%end%>
+						<br />
+						<div class="divider" align="center">
+						 ----OR----
+						 </div>
+						<br />
+						<div align="center">
 							<a href=<%=user_google_oauth2_omniauth_authorize_path%>>
 								<img src="img/google.png" class="img-responsive" alt="" height="33" width="175" />
 							</a>
-							<!-- Sign in form End -->
 						</div>
-						
-						<!-- Second Content for Nav bar -->
-						<div class="tab-pane fade br-lblue" id="register">
-							<!-- Heading -->
-							<h2>Registration</h2>
-							<!-- Sign Up Form Start -->
-							<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "form-horizontal"}) do |f| %>
-								<%= devise_error_messages! %>
-								<div class="form-group">
-									<div class="col-sm-12">
-										<%= f.text_field :name, class: "form-control",placeholder: "Full Name", autofocus: true %>
-									</div>
-								</div>
-								<div class="form-group">
-									<div class="col-sm-12">
-										<%= f.email_field :email, class: "form-control", placeholder: "Email", autocomplete: "off" %>
-									</div>
-								</div>
-								<div class="form-group">
-									<div class="col-sm-12">
-										<%= f.text_field :phone_no, class: "form-control", placeholder: "Phone Number", autocomplete: "off" %>
-									</div>
-								</div>
-								<div class="form-group">
-									<div class="col-sm-12">
-										<%= f.password_field :password, class: "form-control", placeholder: "Password", autocomplete: "off" %>
-									</div>
-								</div>
-								<div class="form-group">
-									<div class="col-sm-12">
-										<%= f.password_field :password_confirmation, class: "form-control", placeholder: "Confirm Password", autocomplete: "off" %>
-									</div>
-								</div>
-								<div class="form-group">
-									<div class="col-sm-12">
-										<div class="checkbox">
-											<label>
-												<%#= f.check_box :terms_of_service %> Accept All Terms & Conditions
-											</label>
-											<span class="pull-right"><a href="#">View</a></span>
-											<div class="clearfix"></div>
-										</div>
-									</div>
-								</div>
-								<div class="form-group text-center">
-									<div class="col-sm-12">
-										<button type="submit" class="btn btn-black">Registration</button>&nbsp;
-										<button type="reset" class="btn btn-default">Reset</button>
-									</div>
-								</div>
-							<%end%>
-							<!-- Sign Up form End -->
-						</div>
-						
-						<!-- Third Content for Nav bar -->
-						<div class="tab-pane fade br-green" id="quick_order">
-							<!-- Heading -->
-							<h2>Quick Order</h2>
+						<br />
+						<!-- Sign in form End -->
+					</div>
+					
+					<!-- Second Content for Nav bar -->
+					<div class="tab-pane fade br-lblue" id="register">
+						<!-- Heading -->
+						<h2>Registration</h2>
+						<!-- Sign Up Form Start -->
+						<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "form-horizontal"}) do |f| %>
+							<%= devise_error_messages! %>
 							<div class="form-group">
-							  	<label for="note">*Note: We recommend Login to get full control.  </label>
+								<div class="col-sm-12">
+									<%= f.text_field :name, class: "form-control",placeholder: "Full Name", autofocus: true %>
+								</div>
 							</div>
-							<%= form_tag quick_order_orders_path do |f| %>
-								<div class="form-group">
-									<div class="col-sm-12">
-										<label for="name">Name</label>
-										<%= text_field_tag :name, nil, class: "form-control",placeholder: "Full Name", autofocus: true %>
+							<div class="form-group">
+								<div class="col-sm-12">
+									<%= f.email_field :email, class: "form-control", placeholder: "Email", autocomplete: "off" %>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-12">
+									<%= f.text_field :phone_no, class: "form-control", placeholder: "Phone Number", autocomplete: "off" %>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-12">
+									<%= f.password_field :password, class: "form-control", placeholder: "Password", autocomplete: "off" %>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-12">
+									<%= f.password_field :password_confirmation, class: "form-control", placeholder: "Confirm Password", autocomplete: "off" %>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-12">
+									<div class="checkbox">
+										<label>
+											<%#= f.check_box :terms_of_service %> Accept All Terms & Conditions
+										</label>
+										<span class="pull-right"><a href="#">View</a></span>
+										<div class="clearfix"></div>
 									</div>
 								</div>
-								<div class="form-group">
-									<div class="col-sm-12">
-										<label for="Email">Email</label>
-										<%= text_field_tag :email,  nil, class: "form-control", placeholder: "Email", autocomplete: "off" %>
-									</div>
-								</div>
-								<div class="form-group">
-									<div class="col-sm-12">
-										<label for="phone_no">Phone No</label>
-										<%= text_field_tag :phone_no,  nil, class: "form-control", placeholder: "Phone Number", autocomplete: "off" %>
-									</div>
-								</div>
-								<div class="form-group">
-									<label for="service_id">Service Required</label>
-									<%= select_tag :service_id, options_for_select(Service.all.map{|service| [ service.name, service.id]}), class:"form-control"%>
-								</div>
-								<div class="form-group">
-									<div class="col-sm-12">
-										<div class="col-sm-6">
-											<label for="service_id">Pickup Date</label>
-											<%= select_tag :collecting_date, options_for_select(["17/11/2016","18/11/2016","19/11/2016"]), class:"form-control"%>
-										</div>
-										<div class="col-sm-6">
-											<label for="service_id">Pickup Time</label>
-											<%= select_tag :collecting_time, options_for_select(["8-9", "9-10"]), class:"form-control"%>
-									  	</div>
-									</div>
-								</div>
-								<div class="form-group">
-									<div class="col-sm-12">
-										<div class="col-sm-6">
-										    <label for="service_id">Delivery Date</label>
-											<%= select_tag :delivery_date, options_for_select(["18/11/2016","19/11/2016","20/11/2016"]), class:"form-control"%>
-										</div>
-										<div class="col-sm-6">
-											<label for="service_id">Delivery Time</label>
-											<%= select_tag :delivery_time, options_for_select(["8-9", "9-10"]), class:"form-control"%>
-										</div>
-									</div>
-								</div>
-								<div class="form-group">
-									<label for="service_id">Locality</label>
-									<%= select_tag :area,  options_for_select(["sec 15", "sec 16"]), class:"form-control"%>
-								</div>
-								<div class="form-group">
-									<label for="service_id">Address</label>
-									<%= text_area_tag :address, nil, maxlength: 150, class:"form-control"%>
-								</div>
-								<div class="form-group text-center">
-									<!-- form Submit and reset button -->
-									<button type="submit" class="btn btn-black">Submit</button>&nbsp;
+							</div>
+							<div class="form-group text-center">
+								<div class="col-sm-12">
+									<button type="submit" class="btn btn-black">Registration</button>&nbsp;
 									<button type="reset" class="btn btn-default">Reset</button>
 								</div>
-							<%end%>
+							</div>
+						<%end%>
+						<!-- Sign Up form End -->
+					</div>
+					
+					<!-- Third Content for Nav bar -->
+					<div class="tab-pane fade br-green" id="quick_order">
+						<!-- Heading -->
+						<h2>Quick Order</h2>
+						<div class="form-group">
+						  	<label for="note">*Note: We recommend Login to get full control.  </label>
 						</div>
+						<%= form_tag quick_order_orders_path do |f| %>
+							<div class="form-group">
+								<div class="col-sm-12">
+									<label for="name">Name</label>
+									<%= text_field_tag :name, nil, class: "form-control",placeholder: "Full Name", autofocus: true %>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-12">
+									<label for="Email">Email</label>
+									<%= text_field_tag :email,  nil, class: "form-control", placeholder: "Email", autocomplete: "off" %>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-12">
+									<label for="phone_no">Phone No</label>
+									<%= text_field_tag :phone_no,  nil, class: "form-control", placeholder: "Phone Number", autocomplete: "off" %>
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="service_id">Service Required</label>
+								<%= select_tag :service_id, options_for_select(Service.all.map{|service| [ service.name, service.id]}), class:"form-control"%>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-12">
+									<div class="col-sm-6">
+										<label for="service_id">Pickup Date</label>
+										<%= select_tag :collecting_date, options_for_select(["17/11/2016","18/11/2016","19/11/2016"]), class:"form-control"%>
+									</div>
+									<div class="col-sm-6">
+										<label for="service_id">Pickup Time</label>
+										<%= select_tag :collecting_time, options_for_select(["8-9", "9-10"]), class:"form-control"%>
+								  	</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-12">
+									<div class="col-sm-6">
+									    <label for="service_id">Delivery Date</label>
+										<%= select_tag :delivery_date, options_for_select(["18/11/2016","19/11/2016","20/11/2016"]), class:"form-control"%>
+									</div>
+									<div class="col-sm-6">
+										<label for="service_id">Delivery Time</label>
+										<%= select_tag :delivery_time, options_for_select(["8-9", "9-10"]), class:"form-control"%>
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="service_id">Locality</label>
+								<%= select_tag :area,  options_for_select(["sec 15", "sec 16"]), class:"form-control"%>
+							</div>
+							<div class="form-group">
+								<label for="service_id">Address</label>
+								<%= text_area_tag :address, nil, maxlength: 150, class:"form-control"%>
+							</div>
+							<div class="form-group text-center">
+								<!-- form Submit and reset button -->
+								<button type="submit" class="btn btn-black">Submit</button>&nbsp;
+								<button type="reset" class="btn btn-default">Reset</button>
+							</div>
+						<%end%>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	
-	<!-- Inner Page Content // End -->
-	
-	<!-- Footer Start -->
-	
-	<div class="footer padd-zero">
-		<div class="container">
-			<!-- Footer Copyright -->
-			<div class="footer-copyright">
-				<p>&copy; Copyright 2014 <a href="#">Company Name</a></p>
-			</div>
-		</div>
-	</div>
-	
-	<!-- Footer End -->
-	
 </div>
-<!-- Footer End -->
+	
 <script>
   $(document).ready(function(){
     var page = $("#page").val();
