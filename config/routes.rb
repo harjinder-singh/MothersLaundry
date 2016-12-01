@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :orders do
     collection do
       post 'quick_order'
+      post 'track_order'
     end
   end
   get 'pricing' => 'home#pricing'

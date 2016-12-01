@@ -6,11 +6,11 @@
 				<div class="col-md-12">
 					<div class="page-mainbar">
 						<!-- Heading -->
-						<h2>Order Listing</h2>
+						<h2>Order Tracker</h2>
 						<div class="row">
 							<div class="col-md-12 col-sm-12">
 								<div class="br-pink form-group">
-									<% if @orders.any?%>
+									<% if @order %>
 										<table class="table table-bordered">
 											<thead>
 												<tr>
@@ -25,26 +25,20 @@
 												</tr>
 											</thead>
 											<tbody>
-												<% @orders.each do |order| %>
-													<tr>
-													    <td><%= order.id %></td>
-														<td><%= order.service.name %></td>
-														<td><%= order.address %></td>
-														<td><%= "#{order.collecting_date}" + " / #{order.collecting_time}" %></td>
-														<td><%= "#{order.delivery_date}" + " / #{order.delivery_time}" %></td>
-														<td><%= order.status.name %></td>
-														<td><%= order.weight %></td>
-														<td><%= order.bill_amount %></td>
-													</tr>
-												<%end%>
+												<tr>
+												    <td><%= @order.id %></td>
+													<td><%= @order.service.name %></td>
+													<td><%= @order.address %></td>
+													<td><%= "#{@order.collecting_date}" + " / #{@order.collecting_time}" %></td>
+													<td><%= "#{@order.delivery_date}" + " / #{@order.delivery_time}" %></td>
+													<td><%= @order.status.name %></td>
+													<td><%= @order.weight %></td>
+													<td><%= @order.bill_amount %></td>
+												</tr>
 											</tbody>
 										</table>
 										</br>
-										<%= link_to 'New Order', new_order_path, class: "btn btn-primary btn-lg" %>
-									<%else%>
-										You have not placed any order yet.  <br><br>
-										
-										Place your first order by clicking link <%= link_to 'First Order', new_order_path %>
+										<%#= link_to 'New Order', new_order_path, class: "btn btn-primary btn-lg" %>
 									<%end%>
 								</div>
 							</div>

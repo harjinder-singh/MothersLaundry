@@ -63,17 +63,33 @@
 		<div class="header-info">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-3 col-sm-3">
+					<div class="col-md-2 col-sm-2">
 						<!-- Social Media -->
 						<div class="social">
 							<a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
 							<a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
 							<a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-							<a href="#" class="pinterest"><i class="fa fa-pinterest"></i></a>
-							<a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
 						</div>
 					</div>
-					<div class="col-md-4 col-sm-4">
+					<%= form_tag track_order_orders_path do |f| %>
+						<div class="col-md-3 col-sm-3">
+							<div class="form-group">
+								<div class="col-sm-12">
+									<div id="imaginary_container"> 
+						                <div class="input-group stylish-input-group">
+						                    <%= text_field_tag :tracker, nil, class: "form-control", placeholder: "Track order, Enter Order No"%>
+						                    <span class="input-group-addon">
+						                        <button type="submit">
+						                            <span class="fa fa-search"></span>
+						                        </button>  
+						                    </span>
+						                </div>
+						            </div>
+								</div>
+							</div>
+						</div>
+					<%end%>
+					<div class="col-md-3 col-sm-3">
 							<!-- Contact Info -->
 						<div class="contact-info">
 							<span><i class="fa fa-phone br-lblue"></i> <strong>+91 234 - 234 - 3231</strong></span>
@@ -278,13 +294,9 @@
 							<img src="img/map.png" class="img-responsive" alt="" />
 							<!-- Map Marker -->
 							<i class="fa fa-map-marker marker india lblue"></i>
-							<i class="fa fa-map-marker marker usa orange"></i>
-							<i class="fa fa-map-marker marker africa green"></i>
 						</div>
 						<span class="location-name">
 							<i class="fa fa-map-marker br-lblue"></i> India &nbsp;&nbsp;
-							<i class="fa fa-map-marker br-orange"></i> USA &nbsp;&nbsp;
-							<i class="fa fa-map-marker br-green"></i> Africa
 						</span>
 					</div>
 				</div>

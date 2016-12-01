@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  skip_before_action :authenticate_user!, :only => [:quick_order]
+  skip_before_action :authenticate_user!, :only => [:quick_order, :track_order]
   
   def new
     @order = current_user.orders.new
@@ -30,7 +30,7 @@ class OrdersController < ApplicationController
     end
     begin
       @quick_order.save!
-      flash[:notice] = "Your order is under process. Our representative will call you in few minutes to confirm your order."
+      flash[:notice] = "Your order is under process with id #{@quick_order.id}. Our representative will call you in few minutes to confirm your order."
       redirect_to root_path
     rescue Exception => e
       flash[:notice] = e.message
@@ -38,6 +38,13 @@ class OrdersController < ApplicationController
     end
   end
   
+  def track_order
+    @order = Order.where(id: params[:tracker]).first
+    unless @order.present?
+      flash[:error] = "No order found with Order no #{params[:tracker]}"
+      redirect_to root_path
+    end
+  end
   private 
 
   def orders_params
