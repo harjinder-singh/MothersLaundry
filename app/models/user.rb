@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,:confirmable
   validates :name, :phone_no, presence: true
   validates :email, uniqueness: true 
-  #validates :terms_of_service, acceptance: { accept: 'yes' }      
+  validates :terms_of_service, acceptance: { accept: 'yes' }      
   has_many :orders
   devise :omniauthable, :omniauth_providers => [:google_oauth2]
   

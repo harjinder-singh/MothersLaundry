@@ -26,3 +26,22 @@
     border:0;
     background:transparent;
 }
+.form-error {
+  display: inline;
+  padding: .2em .6em .3em;
+  font-size: 75%;
+  font-weight: bold;
+  line-height: 1;
+  text-align: center;
+  border-radius: .25em;
+}
+.login-box .form-error {
+  display: inline;
+  padding: .2em .6em .3em;
+  font-size: 75%;
+  font-weight: bold;
+  line-height: 1;
+  color: #ffffff !important;
+  text-align: center;
+  border-radius: .25em;
+}

@@ -43,6 +43,11 @@ jQuery(document).ready(function() {
 		fullWidth:"on",
 		fullScreen:"off"
 	});
+	
+	  $.validate({
+	    lang: 'en',
+	    modules : 'security'
+	  });
 });
 
 // Cycle Slide Js 

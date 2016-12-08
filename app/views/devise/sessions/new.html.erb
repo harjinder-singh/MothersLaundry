@@ -32,19 +32,19 @@
 				<!-- Content for each menu item -->
 				<div class="tab-content">
 					<!-- First Content for Nav bar -->
-					<div class="tab-pane fade in active br-red" id="login">
+					<div class="tab-pane fade in active br-red login-box" id="login">
 						<!-- Heading -->
 						<h2>Login</h2>
 						<!-- Sign in Form Start -->
 						<%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "form-horizontal"} ) do |f| %>
 							<div class="form-group">
 								<div class="col-sm-12">
-									<%= f.email_field :email,  class: "form-control", autofocus: true, placeholder: "Email" %>
+									<%= f.email_field :email, class: "form-control", autofocus: true, placeholder: "Email", :"data-validation" => "email" %>
 								</div>
 							</div>
 							<div class="form-group">
 								<div class="col-sm-12">
-									<%= f.password_field :password, class: "form-control", placeholder: "Password", autocomplete: "off" %>
+									<%= f.password_field :password, class: "form-control", placeholder: "Password", autocomplete: "off", :"data-validation" => "required" %>
 								</div>
 							</div>
 							<div class="form-group">
@@ -88,34 +88,34 @@
 							<%= devise_error_messages! %>
 							<div class="form-group">
 								<div class="col-sm-12">
-									<%= f.text_field :name, class: "form-control",placeholder: "Full Name", autofocus: true %>
+									<%= f.text_field :name, class: "form-control",placeholder: "Full Name", autofocus: true, :"data-validation" => "required", :"data-validation-error-msg" => "We dont know your name please let us know :)" %>
 								</div>
 							</div>
 							<div class="form-group">
 								<div class="col-sm-12">
-									<%= f.email_field :email, class: "form-control", placeholder: "Email", autocomplete: "off" %>
+									<%= f.email_field :email, class: "form-control", placeholder: "Email", autocomplete: "off", :"data-validation" => "email", :"data-validation-error-msg" => "Please enter valid email for eg: user@gmail.com" %>
 								</div>
 							</div>
 							<div class="form-group">
 								<div class="col-sm-12">
-									<%= f.text_field :phone_no, class: "form-control", placeholder: "Phone Number", autocomplete: "off" %>
+									<%= f.text_field :phone_no, class: "form-control", placeholder: "Phone Number", autocomplete: "off", :"data-validation" => "custom", :"data-validation-regexp" => "([0-9]{10})", :"data-validation-error-msg" => "Enter valid phone number eg: 9458694725" %>
 								</div>
 							</div>
 							<div class="form-group">
 								<div class="col-sm-12">
-									<%= f.password_field :password, class: "form-control", placeholder: "Password", autocomplete: "off" %>
+									<%= f.password_field :password, name: "user[password]_confirmation", class: "form-control", placeholder: "Password", autocomplete: "off", :"data-validation" => "length", :"data-validation-length" => "min8", :"data-validation-error-msg" => "Please enter minimum 8 characters as your password"  %>
 								</div>
 							</div>
 							<div class="form-group">
 								<div class="col-sm-12">
-									<%= f.password_field :password_confirmation, class: "form-control", placeholder: "Confirm Password", autocomplete: "off" %>
+									<%= f.password_field :password_confirmation, name: "user[password]", class: "form-control", placeholder: "Confirm Password", autocomplete: "off", :"data-validation" => "confirmation", :"data-validation-error-msg" => "Password confirmation does not match password"%>
 								</div>
 							</div>
 							<div class="form-group">
 								<div class="col-sm-12">
 									<div class="checkbox">
 										<label>
-											<%#= f.check_box :terms_of_service %> Accept All Terms & Conditions
+											<%= f.check_box :terms_of_service, :"data-validation" => "required", :"data-validation-error-msg" => "You have to agree to our terms" %> Accept All Terms & Conditions
 										</label>
 										<span class="pull-right"><a href="#">View</a></span>
 										<div class="clearfix"></div>
@@ -143,19 +143,19 @@
 							<div class="form-group">
 								<div class="col-sm-12">
 									<label for="name">Name</label>
-									<%= text_field_tag :name, nil, class: "form-control",placeholder: "Full Name", autofocus: true %>
+									<%= text_field_tag :name, nil, class: "form-control",placeholder: "Full Name", autofocus: true, :"data-validation" => "required", :"data-validation-error-msg" => "You forget to enter name :)" %>
 								</div>
 							</div>
 							<div class="form-group">
 								<div class="col-sm-12">
 									<label for="Email">Email</label>
-									<%= text_field_tag :email,  nil, class: "form-control", placeholder: "Email", autocomplete: "off" %>
+									<%= text_field_tag :email,  nil, class: "form-control", placeholder: "Email", autocomplete: "off", :"data-validation" => "email", :"data-validation-error-msg" => "Please enter valid email for eg: user@gmail.com" %>
 								</div>
 							</div>
 							<div class="form-group">
 								<div class="col-sm-12">
 									<label for="phone_no">Phone No</label>
-									<%= text_field_tag :phone_no,  nil, class: "form-control", placeholder: "Phone Number", autocomplete: "off" %>
+									<%= text_field_tag :phone_no,  nil, class: "form-control", placeholder: "Phone Number", autocomplete: "off", :"data-validation" => "custom", :"data-validation-regexp" => "([0-9]{10})", :"data-validation-error-msg" => "Enter valid phone number eg: 9458694725" %>
 								</div>
 							</div>
 							<div class="form-group">
@@ -192,7 +192,7 @@
 							</div>
 							<div class="form-group">
 								<label for="service_id">Address</label>
-								<%= text_area_tag :address, nil, maxlength: 150, class:"form-control"%>
+								<%= text_area_tag :address, nil, maxlength: 150, class:"form-control", :"data-validation" => "required"%>
 							</div>
 							<div class="form-group text-center">
 								<!-- form Submit and reset button -->
