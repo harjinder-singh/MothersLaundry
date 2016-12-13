@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
-  devise_for :users, :controllers => {:registrations => "users/registrations", :omniauth_callbacks => "users/omniauth_callbacks" }
+  devise_for :users, :controllers => {:registrations => "users/registrations", :omniauth_callbacks => "users/omniauth_callbacks", :passwords => "users/passwords" }
   devise_scope :user do
     get 'login', to: 'devise/sessions#new'
     delete 'logout', to: 'devise/sessions#destroy'
     get "register" => "devise/registrations#new"
+    get 'verification' => 'devise/registrations#verification'
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -17,6 +18,7 @@ Rails.application.routes.draw do
     end
   end
   get 'pricing' => 'home#pricing'
+  post 'verify_user' => 'users/registrations#verify_user'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
