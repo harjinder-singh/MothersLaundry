@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
     user = User.where(:email => data["email"]).first
 
     unless user
-      user = User.new(name: data["name"],email: data["email"], name: data["name"], terms_of_service: true, password: Devise.friendly_token[0,20])
+      user = User.new(name: data["name"],email: data["email"], terms_of_service: true, password: Devise.friendly_token[0,20])
       user.save(validate: false)
     end
     user

@@ -6,4 +6,11 @@ class HomeController < ApplicationController
   
   def pricing
   end
+  
+  def faqs
+  end
+  
+  def contact_us
+  end
+  
 end

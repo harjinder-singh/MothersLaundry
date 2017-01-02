@@ -18,6 +18,8 @@ Rails.application.routes.draw do
     end
   end
   get 'pricing' => 'home#pricing'
+  get 'faqs' => 'home#faqs'
+  get 'contact_us' => 'home#contact_us'
   post 'verify_user' => 'users/registrations#verify_user'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
