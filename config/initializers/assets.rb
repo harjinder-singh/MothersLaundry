@@ -15,4 +15,4 @@ Rails.application.config.assets.precompile += %w( bootstrap.css animate.min.css 
                                                  jquery.flot.min.js jquery.flot.resize.min.js jquery.countTo.js 
                                                  isotope.js jquery.countdown.min.js jquery.js bootstrap.min.js
                                                  waypoints.min.js jquery.prettyPhoto.js html5shiv.js
-                                                 custom.js respond.min.js)
+                                                 custom.js respond.min.js jquery.bootstrap-growl.min.js)
