@@ -96,11 +96,11 @@
 									<%= f.email_field :email, class: "form-control", placeholder: "Email", autocomplete: "off", :"data-validation" => "email", :"data-validation-error-msg" => "Please enter valid email for eg: user@gmail.com" %>
 								</div>
 							</div>
-							<div class="form-group">
+							<!--<div class="form-group">
 								<div class="col-sm-12">
-									<%= f.text_field :phone_no, class: "form-control", placeholder: "Phone Number", autocomplete: "off", :"data-validation" => "custom", :"data-validation-regexp" => "([0-9]{10})", :"data-validation-error-msg" => "Enter valid phone number eg: 9458694725" %>
+									<%#= f.text_field :phone_no, class: "form-control", placeholder: "Phone Number", autocomplete: "off", :"data-validation" => "custom", :"data-validation-regexp" => "([0-9]{10})", :"data-validation-error-msg" => "Enter valid phone number eg: 9458694725" %>
 								</div>
-							</div>
+							</div>-->
 							<div class="form-group">
 								<div class="col-sm-12">
 									<%= f.password_field :password, name: "user[password]_confirmation", class: "form-control", placeholder: "Password", autocomplete: "off", :"data-validation" => "length", :"data-validation-length" => "min8", :"data-validation-error-msg" => "Please enter minimum 8 characters as your password"  %>

@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     delete 'logout', to: 'devise/sessions#destroy'
     get "register" => "devise/registrations#new"
     get 'verification' => 'devise/registrations#verification'
+    post 'verify_user' => 'users/registrations#verify_user'
+    post 'verify_otp' => 'users/registrations#verify_otp'
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -20,7 +22,6 @@ Rails.application.routes.draw do
   get 'pricing' => 'home#pricing'
   get 'faqs' => 'home#faqs'
   get 'contact_us' => 'home#contact_us'
-  post 'verify_user' => 'users/registrations#verify_user'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

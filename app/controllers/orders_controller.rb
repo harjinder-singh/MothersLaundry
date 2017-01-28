@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
   skip_before_action :authenticate_user!, :only => [:quick_order, :track_order]
+  before_action :verified_user
   
   def new
     @order = current_user.orders.new
@@ -53,5 +54,11 @@ class OrdersController < ApplicationController
   
   def quick_order_params
     params.permit(:name, :email, :phone_no, :service_id, :collecting_date, :collecting_time, :delivery_date, :delivery_time, :area, :address, :quick_order)
+  end
+  
+  def verified_user
+    unless current_user.phone_no.present?
+      redirect_to verification_path  
+    end    
   end
 end

@@ -14,9 +14,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
     yield resource if block_given?
     if resource.persisted?
       if resource.active_for_authentication?
-        set_flash_message! :notice, :signed_up
+        #set_flash_message! :notice, :signed_up
         sign_up(resource_name, resource)
-        respond_with resource, location: after_sign_up_path_for(resource)
+        #respond_with resource, location: after_sign_up_path_for(resource)
+        redirect_to verification_path 
       else
         set_flash_message! :notice, :"signed_up_but_#{resource.inactive_message}"
         expire_data_after_sign_in!
@@ -53,7 +54,33 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-  # protected
+  
+  def verify_user
+    response = User.send_otp(params[:user][:phone_no])
+    body = JSON.parse(response.read_body)
+    session[:otp_detail] = body
+    session[:mobile_no] = params[:user][:phone_no]
+    if response.code == "200"
+      redirect_to :controller => "devise/registrations", :action =>"verification", otp_sent: "true"
+    else
+      redirect_to verification_path
+    end
+  end
+
+  def verify_otp
+   response = User.match_otp(params[:otp], session[:otp_detail]["Details"])
+   body = JSON.parse(response.read_body)
+   if (response.code == "200" and body["Details"]=="OTP Matched")
+      current_user.update_attributes(:phone_no => session[:mobile_no])
+      flash[:notice] = "Successfully verified mobile number!!"
+      redirect_to root_path
+    else
+      flash[:error] = "Mobile number not verified. Please try again."
+      redirect_to verification_path
+    end
+  end
+
+   protected
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_up_params

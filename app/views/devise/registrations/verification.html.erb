@@ -1,1 +1,72 @@
-Hello
+<div class="inner-page">
+	<div class="container">
+		<div class="page-mainbar login">
+			<div class="login-content">
+				<div class="tab-content">
+					<div class="tab-pane fade in active br-lblue" id="register">
+						<h2>Mobile Verification</h2>
+						<%= form_for(current_user, url: verify_user_path, method: :post, html: { class: "form-horizontal"}) do |f| %>
+							
+							<div class="form-group">
+								<div class="col-sm-12">
+									<%= f.text_field :phone_no, class: "form-control", placeholder: "Phone Number", autocomplete: "off", :"data-validation" => "custom", :"data-validation-regexp" => "([0-9]{10})", :"data-validation-error-msg" => "Enter valid phone number eg: 9458694725" %>
+								</div>
+							</div>
+							
+							<div class="form-group text-center">
+								<div class="col-sm-12">
+									<button type="submit" class="btn btn-black">Send OTP</button>&nbsp;
+									<button type="reset" class="btn btn-default">Reset</button>
+								</div>
+							</div>
+						<%end%>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="myModal" class= "modal fade" tabindex="-1" data-backdrop="static" data-keyboard="false">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close red" data-dismiss="modal" aria-hidden="true"></button>
+				<h4 class="modal-title black">Verify OTP sent on mobile</h4>
+			</div>
+			<div class="modal-body">
+				<div class="login-content">
+					<div class="tab-content">
+						<div class="tab-pane fade in active" id="register">
+							<%= form_tag verify_otp_path do |f| %>
+								
+								<div class="form-group">
+									<div class="col-sm-12">
+										<%= text_field_tag :otp,  nil, class: "form-control", placeholder: "Enter OTP", autocomplete: "off", :"data-validation" => "required"%>
+									</div>
+								</div>
+								<br />
+								<br />
+								<div class="form-group text-center">
+									<div class="col-sm-12">
+										<button type="submit" class="btn btn-black">Verify</button>&nbsp;
+										<button type="reset" class="btn btn-green">Reset</button>
+								    </div>
+								</div>
+							<%end%>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" data-dismiss="modal" class="btn btn-danger">Cancel</button>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+  $(document).ready(function(){
+   <% if (params[:otp_sent].present? && params[:otp_sent]== "true") %>
+    	$("#myModal").modal('toggle');
+    <%end%>
+  });
+</script>

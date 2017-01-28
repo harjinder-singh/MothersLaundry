@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable,:confirmable
+         :recoverable, :rememberable, :trackable, :validatable
   validates :name, presence: true
   validates :email, uniqueness: true 
   validates :terms_of_service, presence: true    
@@ -18,5 +18,27 @@ class User < ActiveRecord::Base
       user.save(validate: false)
     end
     user
+  end
+  
+  def self.send_otp(num)
+    url = URI("http://2factor.in/API/V1/#{Rails.application.secrets.two_factor["api_key"]}/SMS/#{num}/AUTOGEN")
+
+    http = Net::HTTP.new(url.host, url.port)
+
+    request = Net::HTTP::Get.new(url)
+    request.body = "{}"
+
+    response = http.request(request)
+  end
+  
+  def self.match_otp(otp, session_id)
+    url = URI("http://2factor.in/API/V1/#{Rails.application.secrets.two_factor["api_key"]}/SMS/VERIFY/#{session_id}/#{otp}")
+
+  http = Net::HTTP.new(url.host, url.port)
+  
+  request = Net::HTTP::Get.new(url)
+  request.body = "{}"
+  
+  response = http.request(request)
   end
 end
