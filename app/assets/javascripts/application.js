@@ -14,7 +14,20 @@
 //= require jquery_ujs
 //= require jquery.prettyPhoto.js
 //= require waypoints.min.js
-//= require_tree .
+//= require bootstrap.js
+//= require jquery.bootstrap-growl.min.js
+//= require jquery.themepunch.plugins.min.js
+//= require jquery.themepunch.revolution.min.js
+//= require waypoints.min.js
+//= require masonry.pkgd.min.js
+//= require imagesloaded.pkgd.min.js
+//= require jquery.cycle.all.js
+//= require jquery.countTo.js 
+//= require isotope.js
+//= require jquery.countdown.min.js
+//= require html5shiv.js
+//= require custom.js
+//= require respond.min.js
 
 jQuery(document).ready(function() {
    jQuery('.tp-banner').revolution(
@@ -113,18 +126,4 @@ $(function() {
 		"z-index": "20"
 	}).appendTo("body");
 
-	$(".plot-chart").bind("plothover", function (event, pos, item) {
-			if (item) {
-				var x = item.datapoint[0].toFixed(2),
-					y = item.datapoint[1].toFixed(2);
-
-				$("#tooltip").html(x + ", " + y)
-					.css({top: item.pageY+5, left: item.pageX+5})
-					.fadeIn(200);
-			} else {
-				$("#tooltip").hide();
-			}
-	});
-
-	$.plot(".plot-chart", [ {data: d1,  label: "Revenue"} ], options);
 });
