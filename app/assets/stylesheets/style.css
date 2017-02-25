@@ -1919,9 +1919,9 @@ a.btn-default i{
 
 .inner-page .pricing-table .pricing-item span.p-price{
 	display: block;
-	font-size: 60px;
-	line-height: 60px;
-	font-weight: 300;
+	font-size: 30px;
+	line-height: 30px;
+	font-weight: 150;
 }
 
 .inner-page .pricing-table .pricing-item span.p-price span{
@@ -1930,9 +1930,9 @@ a.btn-default i{
 
 .inner-page .pricing-table .pricing-item h4{
 	margin: 0px;
-	margin-bottom: 25px;
-	font-size: 35px;
-	font-weight: 300;
+	margin-bottom: 15px;
+	font-size: 25px;
+	font-weight: 150;
 }
 
 .inner-page .pricing-table .pricing-item ul{
@@ -2302,8 +2302,8 @@ div.ppt {
 
 .inner-page .testimonial-content .testimonial-item h4{
 	margin: 0px;
-	margin-bottom: 25px;
-	font-size: 20px;
+	margin-bottom: 15px;
+	font-size: 15px;
 	text-shadow: none;
 }
 
