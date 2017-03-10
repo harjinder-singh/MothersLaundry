@@ -13,3 +13,4 @@ Address.create([{full_address: 'Test 1'},{full_address: 'Test 2'},{full_address:
 
 Status.delete_all
 Status.create([{name: "Ready to pickup"}, {name: "Picked"}, {name: "Ready for wash"}, {name: "Under Washing"}, {name: "Ready to dispach"}, {name: "Out for delivery"}, {name: "Delivered"}])
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')

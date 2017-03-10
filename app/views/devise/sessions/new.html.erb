@@ -166,24 +166,19 @@
 								<div class="col-sm-12">
 									<div class="col-sm-6">
 										<label for="service_id">Pickup Date</label>
-										<%= select_tag :collecting_date, options_for_select(["17/11/2016","18/11/2016","19/11/2016"]), class:"form-control"%>
+										<div class="form-group">
+											<div class='input-group date' id='datetimepicker1'>
+												<input type='text' name= "order[collecting_date]"class="form-control" onkeydown="return false"/>
+												<span class="input-group-addon">
+													<span class="fa fa-calendar"></span>
+												</span>
+											</div>
+										</div>
 									</div>
 									<div class="col-sm-6">
 										<label for="service_id">Pickup Time</label>
-										<%= select_tag :collecting_time, options_for_select(["8-9", "9-10"]), class:"form-control"%>
+										<%= select_tag :collecting_time, options_for_select(["8-10", "10-12", "12-2", "2-4", "4-6", "6-8"]), class:"form-control"%>
 								  	</div>
-								</div>
-							</div>
-							<div class="form-group">
-								<div class="col-sm-12">
-									<div class="col-sm-6">
-									    <label for="service_id">Delivery Date</label>
-										<%= select_tag :delivery_date, options_for_select(["18/11/2016","19/11/2016","20/11/2016"]), class:"form-control"%>
-									</div>
-									<div class="col-sm-6">
-										<label for="service_id">Delivery Time</label>
-										<%= select_tag :delivery_time, options_for_select(["8-9", "9-10"]), class:"form-control"%>
-									</div>
 								</div>
 							</div>
 							<div class="form-group">

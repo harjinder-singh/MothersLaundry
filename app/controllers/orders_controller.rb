@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
   skip_before_action :authenticate_user!, :only => [:quick_order, :track_order]
-  before_action :verified_user
+  before_action :verified_user, :except => [:track_order, :quick_order]
   
   def new
     @order = current_user.orders.new

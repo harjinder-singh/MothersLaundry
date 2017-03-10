@@ -28,6 +28,8 @@
 //= require html5shiv.js
 //= require custom.js
 //= require respond.min.js
+//= require moment
+//= require bootstrap-datetimepicker
 
 jQuery(document).ready(function() {
    jQuery('.tp-banner').revolution(
@@ -125,5 +127,14 @@ $(function() {
 		"border":"1px solid #ccc",
 		"z-index": "20"
 	}).appendTo("body");
+	
+	 $(function () {
+        $('#datetimepicker1').datetimepicker({
+		   format : 'DD/MM/YYYY',
+		   defaultDate: moment(),
+		   maxDate: moment().add(1,'week'),
+		   minDate : moment().millisecond(0).second(0).minute(0).hour(0)
+        });
+    });
 
 });

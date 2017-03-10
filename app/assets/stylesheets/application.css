@@ -10,6 +10,7 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require bootstrap-datetimepicker
  *= require_tree .
  *= require_self
  */
@@ -44,4 +45,8 @@
   color: #ffffff !important;
   text-align: center;
   border-radius: .25em;
+}
+.datepicker {
+background-color: #fff ;
+color: #333 ;
 }
