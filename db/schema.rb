@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170310174906) do
+ActiveRecord::Schema.define(version: 20170312123257) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,6 +59,14 @@ ActiveRecord::Schema.define(version: 20170310174906) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
+  create_table "coupons", force: :cascade do |t|
+    t.string   "code"
+    t.integer  "discount_percentage"
+    t.boolean  "status",              default: true
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+  end
+
   create_table "orders", force: :cascade do |t|
     t.float    "bill_amount"
     t.integer  "weight"
@@ -78,8 +86,10 @@ ActiveRecord::Schema.define(version: 20170310174906) do
     t.string   "email"
     t.string   "name"
     t.string   "phone_no"
+    t.integer  "coupon_id"
   end
 
+  add_index "orders", ["coupon_id"], name: "index_orders_on_coupon_id", using: :btree
   add_index "orders", ["service_id"], name: "index_orders_on_service_id", using: :btree
   add_index "orders", ["status_id"], name: "index_orders_on_status_id", using: :btree
   add_index "orders", ["user_id"], name: "index_orders_on_user_id", using: :btree
@@ -128,6 +138,8 @@ ActiveRecord::Schema.define(version: 20170310174906) do
     t.string   "role"
     t.string   "phone_no",               limit: 10
     t.boolean  "terms_of_service"
+    t.text     "coupons_ready",                     default: [],              array: true
+    t.text     "coupons_used",                      default: [],              array: true
   end
 
   add_index "users", ["address_id"], name: "index_users_on_address_id", using: :btree
@@ -147,6 +159,7 @@ ActiveRecord::Schema.define(version: 20170310174906) do
   end
 
   add_foreign_key "addresses", "users"
+  add_foreign_key "orders", "coupons"
   add_foreign_key "orders", "services"
   add_foreign_key "orders", "statuses"
   add_foreign_key "orders", "users"

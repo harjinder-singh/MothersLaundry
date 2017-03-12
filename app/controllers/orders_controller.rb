@@ -3,11 +3,21 @@ class OrdersController < ApplicationController
   before_action :verified_user, :except => [:track_order, :quick_order]
   
   def new
+    current_user.coupons_ready = []
+    current_user.save
     @order = current_user.orders.new
   end
   def create
     @order = current_user.orders.build(orders_params)
     @order.status_id = 1
+    debugger
+    if current_user.coupons_ready.any?
+      coupon = Coupon.where(code: current_user.coupons_ready.first).first
+    end
+    if coupon
+      @order.coupon_id = coupon.id
+    end
+    
     if @order.save!
       redirect_to orders_path
       else

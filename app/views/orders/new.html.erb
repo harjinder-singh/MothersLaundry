@@ -42,6 +42,10 @@
 													<td><%= f.text_area :address, maxlength: 150, class: "form-control", required: "required"%></td>
 												</tr>
 												<tr>
+													<td colspan="2"><div class="coupon_div"><%= text_field_tag :apply_coupon, nil, class: "form-control", placeholder: "Apply Coupon?" %>
+													<%= button_tag "Apply", class:' btn  btn-primary', id: 'submit_coupon'%><div></td>
+												</tr>
+												<tr>
 													<td colspan="2"><%= f.submit "Submit Order", class:' btn pull-right btn-primary' %></td>
 												</tr>
 											<%end%>

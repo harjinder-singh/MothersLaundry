@@ -24,6 +24,11 @@ Rails.application.routes.draw do
   get 'pricing' => 'home#pricing'
   get 'faqs' => 'home#faqs'
   get 'contact_us' => 'home#contact_us'
+  resources :coupons do
+    collection do
+      post 'apply_coupon'
+    end
+  end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

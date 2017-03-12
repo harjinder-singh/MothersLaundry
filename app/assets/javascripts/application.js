@@ -136,5 +136,26 @@ $(function() {
 		   minDate : moment().millisecond(0).second(0).minute(0).hour(0)
         });
     });
+    
+    $(document).on('click', "#submit_coupon", function(){
+      var coupon_code = $('#apply_coupon').val();
+      $.ajax({
+          url: "/coupons/apply_coupon",
+          type: 'post',
+          data: {coupon_code: coupon_code},
+          success: function(data){
+          	if(data.coupon_applied == "true"){
+              $(".coupon_div").html("Coupon Applied Sucessfully :)");
+          	}
+          	else{
+          		alert("Coupon is already used or expired.");
+          	}
+            
+          },
+          error: function(){
+            alert('Request failed.');
+          }
+        });
+    });
 
 });
