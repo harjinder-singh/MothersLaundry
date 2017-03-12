@@ -137,7 +137,8 @@ $(function() {
         });
     });
     
-    $(document).on('click', "#submit_coupon", function(){
+    $(document).on('click', "#submit_coupon", function(e){
+      e.preventDefault();
       var coupon_code = $('#apply_coupon').val();
       $.ajax({
           url: "/coupons/apply_coupon",

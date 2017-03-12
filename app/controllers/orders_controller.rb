@@ -10,23 +10,30 @@ class OrdersController < ApplicationController
   def create
     @order = current_user.orders.build(orders_params)
     @order.status_id = 1
-    debugger
+    coupon_code = ""
     if current_user.coupons_ready.any?
-      coupon = Coupon.where(code: current_user.coupons_ready.first).first
+      coupon_code = current_user.coupons_ready.first
+      coupon = Coupon.where(code: coupon_code).first
     end
     if coupon
       @order.coupon_id = coupon.id
+      
     end
     
     if @order.save!
+      current_user.coupons_used << coupon_code
+      current_user.coupons_ready.delete(coupon_code)
+      current_user.save!
       redirect_to orders_path
       else
       redirect_to :back
     end
   end
+  
   def show
     
   end
+  
   def index
     @orders = current_user.orders
   end
