@@ -1849,8 +1849,8 @@ a.btn-default i{
 }
 
 .inner-page .service .other-service .service-item{
-	max-width: 280px;
-	height: 280px;
+	max-width: 220px;
+	height: 220px;
 	margin: 0px auto;
 	margin-top: 30px;
 	padding: 25px 0px;
@@ -1896,7 +1896,7 @@ a.btn-default i{
 
 .inner-page .pricing-table .pricing-item{
 	position: relative;
-	max-width: 290px;
+	max-width: 250px;
 	margin: 0px auto;
 	margin-top: 30px;
 	margin-bottom: 40px;
@@ -1970,7 +1970,7 @@ a.btn-default i{
 }
 
 .inner-page .pricing .p-plan-item{
-	max-width: 430px;
+	max-width: 350px;
 	margin: 0px auto;
 	margin-top: 30px;
 	padding: 20px;
