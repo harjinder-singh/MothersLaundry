@@ -8,7 +8,16 @@ class User < ActiveRecord::Base
   validates :terms_of_service, presence: true    
   has_many :orders
   devise :omniauthable, :omniauth_providers => [:google_oauth2]
-  
+  validates :auth_token, uniqueness: true
+  before_create :generate_authentication_token!
+
+
+  def generate_authentication_token!
+    begin
+      self.auth_token = Devise.friendly_token
+    end while self.class.exists?(auth_token: auth_token)
+  end 
+
   def self.from_omniauth(access_token)
     data = access_token.info
     user = User.where(:email => data["email"]).first
@@ -19,7 +28,7 @@ class User < ActiveRecord::Base
     end
     user
   end
-  
+
   def self.send_otp(num)
     url = URI("http://2factor.in/API/V1/#{Rails.application.secrets.two_factor["api_key"]}/SMS/#{num}/AUTOGEN")
 
@@ -30,15 +39,16 @@ class User < ActiveRecord::Base
 
     response = http.request(request)
   end
-  
+
   def self.match_otp(otp, session_id)
     url = URI("http://2factor.in/API/V1/#{Rails.application.secrets.two_factor["api_key"]}/SMS/VERIFY/#{session_id}/#{otp}")
 
-  http = Net::HTTP.new(url.host, url.port)
-  
-  request = Net::HTTP::Get.new(url)
-  request.body = "{}"
-  
-  response = http.request(request)
+    http = Net::HTTP.new(url.host, url.port)
+    
+    request = Net::HTTP::Get.new(url)
+    request.body = "{}"
+    
+    response = http.request(request)
   end
+
 end

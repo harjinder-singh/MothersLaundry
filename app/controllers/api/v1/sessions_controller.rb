@@ -1,8 +1,8 @@
-class Users::SessionsController < Devise::SessionsController
+class Api::V1::SessionsController < ApplicationController
 
   def create
-    user_password = params[:user_password]
-    user_email = params[:user_email]
+    user_password = params[:session][:password]
+    user_email = params[:session][:email]
     user = user_email.present? && User.find_by(email: user_email)
 
     if user
@@ -20,13 +20,10 @@ class Users::SessionsController < Devise::SessionsController
   end
 
   def destroy
-    respond_to do |format|
-      format.html { super }
-      format.json {
-        warden.authenticate!(:scope => resource_name, :recall => "#{controller_path}#new")
-        render :json => {}.to_json, :status => :ok
-      }
-    end
+    user = User.find_by(auth_token: params[:id])
+    user.generate_authentication_token!
+    user.save
+    head 204
   end
 
 end
