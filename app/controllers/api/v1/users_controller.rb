@@ -3,7 +3,7 @@ class Api::V1::UsersController < ApplicationController
   before_action :authenticate_with_token!, only: [:update, :destroy]
 
   def index
-    respond_with User.all
+    render json: User.all
   end
 
   def show
